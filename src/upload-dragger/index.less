@@ -1,0 +1,65 @@
+/**
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
+@import '../custom.less';
+
+@upload-prefix-cls: ~'@{css-prefix}upload';
+@upload-dragger-prefix-cls: ~'@{css-prefix}upload-dragger';
+
+.@{upload-dragger-prefix-cls} {
+  width: 360px;
+  height: 180px;
+  background-color: #fff;
+  border: 1px dashed #d9d9d9;
+  border-radius: 2px;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    border-color: #40a9ff;
+  }
+
+  &.is-dragover {
+    background-color: rgba(32, 159, 255, 0.06);
+    border: 2px dashed #40a9ff;
+  }
+
+  .icon-fileupload {
+    font-size: 36px;
+    fill: #999;
+  }
+
+  .@{upload-prefix-cls}__text {
+    color: #666;
+    font-size: 12px;
+    text-align: center;
+
+    em {
+      color: #40a9ff;
+      font-style: normal;
+    }
+  }
+
+  & + .@{upload-prefix-cls}__tip {
+    text-align: center;
+  }
+
+  & ~ .@{upload-prefix-cls}__files {
+    border-top: 1px solid #dcdfe6;
+    margin-top: 7px;
+    padding-top: 5px;
+  }
+}

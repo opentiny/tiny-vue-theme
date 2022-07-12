@@ -1,0 +1,347 @@
+/**
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
+@import '../custom.less';
+
+@steps-prefix-cls: ~'@{css-prefix}steps';
+
+.@{steps-prefix-cls} {
+  & &-advanced {
+    & li {
+      line-height: 28px;
+      display: inline-block;
+      background: #fff;
+      position: relative;
+
+      &.current {
+        a {
+          background: var(--ti-common-color-line-active);
+          color: #fff;
+          font-weight: bold;
+
+          &::after {
+            border-left-color: var(--ti-common-color-line-active);
+          }
+        }
+      }
+
+      a {
+        border: solid 1px #d9d9d9;
+        border-right: none;
+        display: block;
+        text-align: center;
+        position: relative;
+        text-decoration: none;
+        color: #999;
+        font-size: 12px;
+
+        &::after {
+          content: '';
+          border-top: 14px solid transparent;
+          border-bottom: 14px solid transparent;
+          border-left: 9px solid #fff;
+          position: absolute;
+          right: -9px;
+          top: 0;
+          z-index: 1;
+        }
+
+        &::before {
+          content: '';
+          border-top: 14px solid transparent;
+          border-bottom: 14px solid transparent;
+          border-left: 9px solid #d9d9d9;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+
+        &:hover {
+          background: #f1f1f1;
+          color: #999;
+          text-decoration: none;
+
+          &::after {
+            border-left-color: #f1f1f1;
+          }
+        }
+      }
+
+      &:first-child {
+        a {
+          border-top-left-radius: 3px;
+          border-bottom-left-radius: 3px;
+
+          &::before {
+            display: none;
+          }
+        }
+      }
+
+      &:last-child {
+        a {
+          border-right: solid 1px #d9d9d9;
+          border-top-right-radius: 3px;
+          border-bottom-right-radius: 3px;
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+
+      .dot {
+        height: 12px;
+        width: 12px;
+        margin-right: 8px;
+        padding: 0;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        position: absolute;
+        svg {
+          width: 100%;
+          height: 100%;
+          fill: #999;
+        }
+      }
+
+      &.current .dot svg {
+        fill: #fff;
+      }
+      &:hover .dot svg {
+        fill: #999;
+      }
+    }
+
+    .count {
+      background-color: #f5222d;
+      border-radius: 10px;
+      color: #fff;
+      display: inline-block;
+      font-size: 12px;
+      height: 18px;
+      line-height: 18px;
+      padding: 0 6px;
+      text-align: center;
+      white-space: nowrap;
+      position: absolute;
+      top: -10px;
+      right: 10px;
+    }
+  }
+
+  .line {
+    background: #dbdbdb;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    font-size: 12px;
+    text-align: center;
+    left: ~'calc(50% - 10px)';
+    top: 4px;
+    border-radius: 50%;
+    background: #d9d9d9;
+    color: #fff;
+    cursor: pointer;
+    z-index: 15;
+  }
+
+  .process-done {
+    .icon {
+      background: #fff;
+      color: var(--ti-common-color-line-active);
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      font-size: 20px;
+
+      .@{css-prefix}svg {
+        fill: var(--ti-common-color-line-active);
+        vertical-align: baseline;
+        border: 1px solid var(--ti-common-color-line-active);
+        border-radius: 50%;
+        padding: 2px;
+      }
+    }
+
+    .line {
+      background: var(--ti-common-color-line-active);
+    }
+  }
+
+  .node-description {
+    position: relative;
+    margin-top: 6px;
+    overflow: hidden;
+    text-align: center;
+
+    .name {
+      font-size: 12px;
+      float: left;
+      width: 100%;
+    }
+
+    .status {
+      font-size: 12px;
+      float: left;
+      width: 100%;
+    }
+  }
+
+  .process-current {
+    .icon {
+      background: var(--ti-common-color-line-active);
+      color: #fff;
+      font-size: 12px;
+    }
+  }
+
+  .reverse {
+    .process-current {
+      .line {
+        background: var(--ti-common-color-line-active);
+      }
+    }
+  }
+
+  & &-normal {
+    overflow: hidden;
+
+    .normal {
+      display: block;
+      float: left;
+    }
+
+    .line {
+      height: 4px;
+      left: 50%;
+      top: -8px;
+      position: relative;
+    }
+
+    .date-time {
+      position: relative;
+      margin-top: 6px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .line-end {
+      width: 0;
+    }
+
+    .process-done {
+      .line {
+        background: var(--ti-common-color-line-active);
+      }
+    }
+
+    .process-current {
+      .name {
+        color: var(--ti-common-color-line-active);
+        font-weight: bold;
+      }
+    }
+
+    .icon {
+      span {
+        display: inline-block;
+      }
+    }
+  }
+
+  & &-timeline {
+    overflow: hidden;
+
+    .timeline {
+      .line {
+        width: 4px;
+        float: left;
+
+        .@{css-prefix}svg {
+          vertical-align: baseline;
+        }
+      }
+
+      .date-time {
+        width: 100px;
+        float: left;
+        padding-right: 20px;
+        text-align: right;
+        color: #333;
+        font-size: 12px;
+
+        .time {
+          display: block;
+          line-height: 1;
+        }
+
+        .date {
+          display: block;
+          line-height: 1;
+          margin-bottom: 4px;
+        }
+      }
+
+      .name {
+        float: left;
+        margin-left: 20px;
+        font-size: 14px;
+        color: #333;
+        line-height: 1.45em;
+      }
+
+      .icon {
+        top: 0px;
+      }
+    }
+  }
+
+  &.mobile {
+    padding-left: 10%;
+
+    .@{steps-prefix-cls}-timeline {
+      overflow: inherit;
+
+      .@{css-prefix-iconfont} {
+        font-size: 45px;
+      }
+
+      .timeline {
+        .line {
+          .icon {
+            width: 45px;
+            line-height: 45px;
+            height: 45px;
+            font-size: 36px;
+            position: relative;
+            left: -20px;
+          }
+        }
+
+        .name {
+          margin-left: 30px;
+          font-size: 26px;
+        }
+
+        & > div {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}

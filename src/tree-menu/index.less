@@ -1,0 +1,156 @@
+/**
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
+@import '../custom.less';
+
+@tree-prefix-cls: ~'@{css-prefix}tree';
+@tree-node-prefix-cls: ~'@{css-prefix}tree-node';
+@input-prefix-cls: ~'@{css-prefix}input';
+@tree-menu-prefix-cls: ~'@{css-prefix}tree-menu';
+
+.@{tree-menu-prefix-cls} {
+  width: 210px;
+  position: relative;
+  font-size: 12px;
+
+  &:before {
+    content: '';
+    border-right: 1px solid #d9d9d9;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .@{input-prefix-cls} {
+    .@{input-prefix-cls}__inner {
+      border: none;
+      border-bottom: 1px solid #d9d9d9;
+    }
+  }
+
+  .@{tree-prefix-cls} {
+    .@{tree-node-prefix-cls} {
+      &__expand-icon {
+        cursor: pointer;
+        fill: var(--ti-leftmenu-icon-color-nomal);
+        font-size: 12px;
+        transform: rotate(0);
+        transition: transform 0.3s ease-in-out;
+        flex-shrink: 0;
+    
+        &.expanded {
+          transform: rotate(90deg);
+          fill: var(--ti-tree-minus-square-color);
+        }
+    
+        &.is-leaf {
+          visibility: hidden;
+        }
+      }
+
+      .@{tree-node-prefix-cls}__content {
+        height: 40px;
+        line-height: 40px;
+        overflow: hidden;
+
+        .tree-node-icon {
+          order: 1;
+          margin-right: 8px;
+        }
+
+        .tree-node {
+          width: 100%;
+        }
+
+        .tree-node-name {
+          padding: 0 12px;
+        }
+      }
+
+      &.is-current {
+        & > .@{tree-node-prefix-cls}__content {
+          background-color: #fff;
+          position: relative;
+
+          .tree-node-name {
+            border-left: 2px solid var(--ti-tree-minus-square-color);
+          }
+
+          .tree-node-body {
+            color: var(--ti-tree-minus-square-color);
+          }
+        }
+      }
+
+      .tree-node-body {
+        color: var(--ti-base-color-common);
+        display: block;
+
+        &,
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  & &__overflow {
+    &.@{tree-prefix-cls} {
+      .@{tree-node-prefix-cls} {
+        .@{tree-node-prefix-cls}__content {
+          .tree-node-name {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+            padding-right: 0;
+          }
+
+          .tree-node {
+            width: calc(100% - 24px);
+          }
+        }
+      }
+    }
+  }
+
+  & &__wrap {
+    &.@{tree-prefix-cls} {
+      .@{tree-node-prefix-cls}__content {
+        min-height: 40px;
+        height: auto;
+      }
+
+      .tree-node-body {
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+      }
+
+      .@{tree-node-prefix-cls}__label {
+        //兼容ie10-ie11
+        @media screen and (-ms-high-contrast: active),
+          (-ms-high-contrast: none) {
+          display: flex;
+        }
+      }
+
+      .tree-node-name {
+        white-space: normal;
+        line-height: normal;
+        display: block;
+        word-break: break-all;
+      }
+    }
+  }
+}

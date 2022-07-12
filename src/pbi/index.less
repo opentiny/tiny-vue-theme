@@ -1,0 +1,102 @@
+/**
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
+@import '../mixins/button.less';
+@import '../custom.less';
+
+.dialog-pbi {
+  &.@{css-prefix}dialog {
+    .dialog-body {
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
+
+  .@{css-prefix}selected {
+    color: rgb(19, 143, 199);
+    background: rgba(31, 158, 216, 0.12);
+  }
+
+  .pbi_col {
+    width: 200px;
+    float: left;
+  }
+
+  .pbi_list {
+    height: 460px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 4px;
+  }
+}
+
+// dialog 基础样式
+.@{css-prefix}dialog {
+  background: #fff;
+  padding: 0;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  -webkit-animation: dialog-fade-in 0.3s;
+  animation: dialog-fade-in 0.3s;
+
+  .dialog-head {
+    background: #fff;
+    font-size: 16px;
+
+    .dialog-title {
+      color: var(--ti-base-color-common);
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .dialog-operation {
+      float: right;
+
+      > a {
+        color: #c4c4c4;
+
+        &:hover {
+          color: var(--ti-common-color-line-active);
+        }
+
+        .@{css-prefix}small-close {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .dialog-body {
+    width: 100%;
+    padding: 24px;
+    min-height: 36px;
+    font-size: 16px;
+    font-weight: bold;
+    overflow: auto;
+    overflow-x: hidden;
+    color: var(--ti-base-color-common);
+    max-height: 55vh !important; // erralert警告弹窗设置最高高度
+  }
+
+  .dialog-head-alert-confirm {
+    padding: 0 24px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #d9d9d9;
+  }
+}
+
+// button 基础样式
+.@{css-prefix}toolbar {
+  clear: both;
+  text-align: center;
+}

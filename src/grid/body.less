@@ -1,0 +1,98 @@
+/**
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
+@import '../custom.less';
+
+@grid-prefix-cls: ~'@{css-prefix}grid';
+@grid-body-prefix-cls: ~'@{css-prefix}grid-body';
+@numeric-prefix-cls: ~'@{css-prefix}numeric';
+
+.@{grid-prefix-cls}__body-wrapper,
+.@{grid-prefix-cls}__fixed-left-body-wrapper,
+.@{grid-prefix-cls}__fixed-right-body-wrapper {
+  // border-bottom: solid 1px #d9d9d9;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.@{grid-prefix-cls}__borders {
+  .@{grid-prefix-cls}-border-top,
+  .@{grid-prefix-cls}-border-right,
+  .@{grid-prefix-cls}-border-bottom,
+  .@{grid-prefix-cls}-border-left {
+    position: absolute;
+    background-color: var(--ti-common-color-line-active);
+  }
+
+  .@{grid-prefix-cls}-checked-borders {
+    .@{grid-prefix-cls}-border-top,
+    .@{grid-prefix-cls}-border-bottom {
+      height: 2px;
+    }
+
+    .@{grid-prefix-cls}-border-right,
+    .@{grid-prefix-cls}-border-left {
+      width: 2px;
+    }
+  }
+
+  .@{grid-prefix-cls}-copyed-borders {
+    .@{grid-prefix-cls}-border-top,
+    .@{grid-prefix-cls}-border-bottom {
+      height: 3px;
+    }
+
+    .@{grid-prefix-cls}-border-right,
+    .@{grid-prefix-cls}-border-left {
+      width: 3px;
+    }
+
+    & > span {
+      background: repeating-linear-gradient(
+        135deg,
+        transparent,
+        transparent 3px,
+        var(--ti-common-color-line-active) 3px,
+        var(--ti-common-color-line-active) 9px
+      );
+      animation: shine 1s infinite linear;
+    }
+  }
+}
+
+.@{grid-body-prefix-cls}__row {
+  .@{grid-body-prefix-cls}__column {
+    &.col__checked {
+      position: relative;
+      background-color: var(--ti-table-tr-bg-color-hover);
+      border-right-color: #d4d4d4;
+      border-bottom-color: #d4d4d4;
+    }
+
+    &.col__selected {
+      background-color: #fff;
+    }
+
+    .@{numeric-prefix-cls} {
+      width: 100%;
+    }
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: -1px -1px;
+  }
+
+  100% {
+    background-position: -12px -12px;
+  }
+}

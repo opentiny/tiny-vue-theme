@@ -1,0 +1,64 @@
+/**
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
+@import '../custom.less';
+
+@select-dropdown-item-prefix-cls: ~'@{css-prefix}select-dropdown__item';
+@svg-prefix-cls: ~'@{css-prefix}svg';
+
+.@{select-dropdown-item-prefix-cls} {
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--ti-base-color-common);
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  cursor: pointer;
+
+  &.hover,
+  &:hover {
+    background-color: var(--ti-select-item-bg-color-hover);
+    color: var(--ti-select-item-text-color-hover);
+  }
+
+  &.selected {
+    color: #FFF;
+    background-color: var(--ti-select-item-selected-bg-color);
+  }
+
+  &.is-disabled {
+    color: var(--ti-common-color-text-disabled);
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+  
+  .@{svg-prefix-cls} {
+    fill: #bfbfbf;
+    font-size: 16px;
+    margin-right: 8px;
+  }
+
+  &.selected .@{svg-prefix-cls},
+  &.hover .@{svg-prefix-cls},
+  .checked-sur.@{svg-prefix-cls},
+  .halfselect.@{svg-prefix-cls} {
+    fill: var(--ti-select-item-selected-bg-color);
+  }
+
+  &.memorize-highlight {
+    color: var(--ti-select-item-selected-bg-color);
+  }
+}

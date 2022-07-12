@@ -1,0 +1,290 @@
+/**
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
+@import '../mixins/common.less';
+@import '../mixins/button-group.less';
+@import '../custom.less';
+
+@button-group-prefix-cls: ~'@{css-prefix}button-group';
+@group-item-prefix-cls: ~'@{css-prefix}group-item';
+@button-prefix-cls: ~'@{css-prefix}button';
+@dropdown-prefix-cls: ~'@{css-prefix}dropdown';
+
+.@{button-group-prefix-cls} {
+  display: inline-block;
+  vertical-align: middle;
+  .clearfix();
+
+  .@{group-item-prefix-cls} {
+    display: inline-block;
+    vertical-align: middle;
+
+    & li {
+      line-height: 28px;
+      background: #fff;
+      float: left;
+      position: relative;
+
+      button {
+        display: block;
+        text-align: center;
+        margin: 0 2px;
+        color: var(--ti-button-group-text-color);
+        background: var(--ti-button-group-bg-color);
+        min-width: 80px;
+        height: 30px;
+        padding: 0 30px;
+        border: none;
+        text-decoration: none;
+        font-size: 12px;
+        outline: none;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &.disabled,
+        &[disabled] {
+          background: var(--ti-button-group-bg-color-disabled);
+          border-color: var(--ti-button-group-bg-color-disabled);
+          cursor: not-allowed;
+          color: var(--ti-button-group-text-color-disabled);
+        }
+
+        &.plain,
+        &[plain] {
+          background: none;
+        }
+      }
+
+      &:hover {
+        z-index: 1;
+
+        button:not(.disabled) {
+          background: var(--ti-button-group-bg-color-hover);
+          color: var(--ti-button-group-text-color);
+          border-color: var(--ti-button-group-border-color-hover);
+          outline: none;
+
+          &.plain,
+          &[plain] {
+            color: var(--ti-button-group-bg-color-active);
+            background-color: rgba(24, 144, 255, 0.06);
+            border-color: var(--ti-button-group-bg-color-active);
+          }
+        }
+      }
+
+      &.active {
+        z-index: 1;
+
+        &:hover {
+          button:not(.disabled) {
+            background: var(--ti-button-group-bg-color-active);
+            border-color: var(--ti-button-group-border-color-active);
+            color: var(--ti-button-group-text-color-active);
+
+            &.plain,
+            &[plain] {
+              background-color: rgba(24, 144, 255, 0.06);
+            }
+          }
+        }
+
+        button:not(.disabled) {
+          background: var(--ti-button-group-bg-color-active);
+          border-color: var(--ti-button-group-border-color-active);
+          color: var(--ti-button-group-text-color-active);
+          outline: none;
+
+          &.plain,
+          &[plain] {
+            color: var(--ti-button-group-bg-color-active);
+            background: none;
+          }
+        }
+      }
+
+      &:first-child {
+        button {
+          border-radius: 2px 0 0 2px;
+        }
+      }
+
+      &:last-child {
+        button {
+          border-radius: 0 2px 2px 0;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: -1px;
+      }
+    }
+
+    &.show-more {
+      li {
+        button {
+          color: var(--ti-base-color-common);
+          background: var(--ti-button-default-normal-bg-color);
+          border: 1px solid var(--ti-base-color-common-3);
+          margin: 0;
+          border-radius: 0;
+          min-width: auto;
+          max-width: none;
+        }
+
+        &:hover {
+          button:not(.disabled) {
+            color: var(--ti-button-primary-normal-bg-color);
+            border-color: var(--ti-base-color-common-3);
+            background: var(--ti-common-bg-minor-hover);
+          }
+        }
+
+        &.active {
+          z-index: 9;
+          button:not(.disabled) {
+            color: var(--ti-button-primary-normal-bg-color);
+            border-color: var(--ti-button-primary-normal-bg-color);
+            background: var(--ti-common-bg-minor-active);
+          }
+        }
+
+        .more-button,
+        .edit-button {
+          min-width: auto;
+          max-width: none;
+        }
+
+        .more-button {
+          padding: 0 10px;
+          .tiny-svg {
+            font-size: 16px;
+          }
+        }
+
+        .edit-button {
+          padding: 0 6px;
+          .tiny-svg {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  & > .@{button-prefix-cls} {
+    float: left;
+    position: relative;
+
+    & + .@{button-prefix-cls} {
+      margin-left: 0;
+    }
+
+    &:first-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right-color: rgba(255, 255, 255, 0.5);
+
+      &.@{button-prefix-cls}--default {
+        border-right-color: #d9d9d9;
+
+        &:hover,
+        &:active,
+        &:focus {
+          border-right-color: var(--ti-button-group-bg-color-active);
+          z-index: 1;
+        }
+      }
+    }
+
+    &:last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left-color: rgba(255, 255, 255, 0.5);
+
+      &.@{button-prefix-cls}--default {
+        border-left-color: #d9d9d9;
+
+        &:hover,
+        &:active,
+        &:focus {
+          border-left-color: var(--ti-button-group-bg-color-active);
+          z-index: 1;
+        }
+      }
+    }
+
+    &:first-child:last-child {
+      border-radius: 2px;
+
+      &.is-round {
+        border-radius: 15px;
+      }
+
+      &.is-circle {
+        border-radius: 50%;
+      }
+    }
+
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+      border-left-color: rgba(255, 255, 255, 0.5);
+      border-right-color: rgba(255, 255, 255, 0.5);
+
+      &.@{button-prefix-cls}--default {
+        border-left-color: #d9d9d9;
+        border-right-color: #d9d9d9;
+
+        &:hover,
+        &:active,
+        &:focus {
+          border-left-color: var(--ti-button-group-bg-color-active);
+          border-right-color: var(--ti-button-group-bg-color-active);
+          z-index: 1;
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: -1px;
+    }
+
+    & > .@{dropdown-prefix-cls} > .@{button-prefix-cls} {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+.@{group-item-prefix-cls}__more-popover {
+  &.tiny-popover.tiny-popper {
+    padding: 4px 0;
+    &[x-placement^='bottom'] {
+      margin-top: 2px;
+    }
+    .more-item {
+      color: var(--ti-base-color-common);
+      height: 30px;
+      line-height: 30px;
+      padding: 0 8px;
+      &:hover {
+        color: var(--ti-select-item-text-color-hover);
+        background-color: var(--ti-select-item-bg-color-hover);
+        cursor: pointer;
+      }
+      &.active {
+        color: var(--ti-common-bg-minor-active);
+        background-color: var(--ti-select-item-selected-bg-color);
+      }
+    }
+  }
+}

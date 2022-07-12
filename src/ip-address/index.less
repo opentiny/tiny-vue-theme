@@ -1,0 +1,143 @@
+/**
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
+@import '../mixins/input.less';
+@import '../mixins/common.less';
+@import '../custom.less';
+
+@ip-address-prefix-cls: ~'@{css-prefix}ip-address';
+
+.@{ip-address-prefix-cls} {
+  width: 270px;
+  max-width: 100%;
+  outline: 0;
+  display: inline-table;
+  text-align: left;
+  box-sizing: border-box;
+
+  &__input {
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: var(--ti-input-height);
+    border: 1px solid #d9d9d9;
+    color: var(--ti-base-color-common);
+    border-radius: 2px;
+    background: #fff;
+    stop-color: var(--ti-input-clear-color-disabled);
+    lighting-color: var(--ti-input-clear-color-hover);
+    font-size: 12px;
+    padding: 0 8px;
+    display: block;
+    white-space: nowrap;
+    background-image: none;
+    .user-select(auto);
+    transition: border 0.3s;
+    outline: 0;
+    box-sizing: border-box;
+    .input-readonly(@color: var(--ti-input-border-color-hover));
+    .placeholder(@color: #999999);
+
+    &:hover {
+      border: 1px solid var(--ti-input-border-color-hover);
+      color: var(--ti-base-color-common);
+      .placeholder(@color: #999999);
+    }
+
+    &:focus,
+    &:active,
+    &.active,
+    &[active] {
+      border: 1px solid var(--ti-input-clear-color-hover);
+      color: var(--ti-base-color-common);
+    }
+
+    &:focus {
+      .placeholder(@color: #d9d9d9);
+    }
+
+    &.disabled,
+    &[disabled] {
+      cursor: not-allowed;
+      pointer-events: none;
+      border: 1px solid var(--ti-input-border-color-disabled);
+      color: var(--ti-input-text-color-disabled);
+      background: var(--ti-input-bg-color-disabled);
+      box-shadow: none;
+
+      .@{css-prefix}svg {
+        fill: var(--ti-input-text-color-disabled);
+      }
+    }
+
+    li {
+      float: left;
+      overflow: hidden;
+      width: 25%;
+      display: inline-flex;
+      align-items: center;
+
+      > input {
+        border: none;
+        text-align: center;
+        outline: none;
+        background: none;
+        color: var(--ti-base-color-common);
+        width: ~'calc(100% - 12px)';
+        float: left;
+        height: var(--ti-input-height);
+        line-height: normal;
+        padding: 0;
+
+        &:focus,
+        &:active,
+        &.active,
+        &[active] {
+          color: var(--ti-base-color-common);
+        }
+
+        &:hover {
+          color: var(--ti-base-color-common);
+        }
+
+        &.disabled,
+        &[disabled] {
+          color: var(--ti-input-text-color-disabled);
+        }
+      }
+
+      svg {
+        vertical-align: middle;
+        fill: var(--ti-base-color-common);
+      }
+
+      &:last-child {
+        > svg {
+          display: none;
+        }
+
+        > input {
+          width: 100%;
+        }
+      }
+
+      &:only-child {
+        width: 100%;
+
+        > input {
+          width: 100%;
+          text-align: left;
+          padding: 0 8px;
+        }
+      }
+    }
+  }
+}

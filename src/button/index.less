@@ -1,0 +1,269 @@
+/**
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
+@import '../mixins/button.less';
+@import '../custom.less';
+
+@button-prefix-cls: ~'@{css-prefix}button';
+@svg-prefix-cls: ~'@{css-prefix}svg';
+
+.@{button-prefix-cls} {
+  display: inline-block;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  height: var(--ti-button-middle-height);
+  line-height: calc(var(--ti-button-middle-height) - 2px);
+  min-width: 80px;
+  color: var(--ti-base-color-common);
+  fill: var(--ti-base-color-common);
+  font-size: var(--ti-common-font-size-base);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  user-select: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #adb0b8;
+  border-image: initial;
+  border-radius: 2px;
+  background: #fff;
+  padding: 0 var(--ti-button-middle-padding-horizon);
+  overflow: hidden;
+  transition: border 0.3s ease 0s, color 0.3s ease 0s, background 0.3s ease 0s;
+  outline: 0;
+
+  .@{svg-prefix-cls} {
+    vertical-align: text-top;
+  }
+
+  & > img {
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &:focus,
+  &:hover {
+    .button-color(#5E7CE0, #5E7CE0, #fff);
+  }
+
+  &:active,
+  &.is-active,
+  &.is-plain:active {
+    .button-color(#5E7CE0, #5E7CE0, #e6f7ff);
+  }
+
+  &.is-disabled,
+  &.is-disabled:focus,
+  &.is-disabled:hover {
+    cursor: not-allowed;
+    .button-color(#bfbfbf, #DFE1E6, #F5F5F6);
+  }
+
+  &.is-plain:focus,
+  &.is-plain:hover {
+    .button-color(#5E7CE0, #5E7CE0, #fff);
+  }
+
+  &.is-disabled.is-plain,
+  &.is-disabled.is-plain:focus,
+  &.is-disabled.is-plain:hover {
+    .button-color(#bfbfbf, #d9d9d9, #f5f5f5);
+  }
+
+  & + & {
+    margin-left: 8px;
+  }
+
+  &.is-loading {
+    position: relative;
+    pointer-events: none;
+    overflow: initial;
+
+    &:before {
+      pointer-events: none;
+      content: '';
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      border-radius: inherit;
+      background-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .@{svg-prefix-cls} {
+      fill: var(--ti-button-primary-color-disabled);
+    }
+
+    &.@{button-prefix-cls}--default {
+      .@{svg-prefix-cls} {
+        fill: #5E7CE0;
+      }
+    }
+  }
+
+  &.is-round {
+    border-radius: 15px;
+  }
+
+  &.is-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &:not(.is-circle) {
+    .@{svg-prefix-cls}.is-text {
+      margin-right: 8px;
+    }
+
+    &.is-loading {
+      .@{svg-prefix-cls} {
+        margin-right: 4px;
+      }
+    }
+  }
+
+  &.is-circle {
+    border-radius: 50%;
+    min-width: 30px;
+    min-height: 30px;
+    line-height: 1;
+    padding: 8px;
+  }
+
+  &.is-circle&--large {
+    .button-circle-size(48px; 14px);
+  }
+
+  &.is-circle&--medium {
+    .button-circle-size(42px, 12px);
+  }
+
+  &.is-circle&--small {
+    .button-circle-size(36px, 10px);
+  }
+
+  &.is-circle&--mini {
+    .button-circle-size(24px, 8px);
+  }
+
+  &&--primary {
+    .button-type(
+     var(--ti-button-primary-normal-color),
+     var(--ti-button-primary-normal-bg-color),
+     var(--ti-button-primary-bg-color-hover),
+     var(--ti-button-primary-bg-color-active),
+     var(--ti-button-primary-color-disabled),
+     var(--ti-button-primary-bg-color-disabled), 
+      rgba(24, 144, 255, 0.06),
+      rgba(191, 191, 191, 0.1),
+     var(--ti-button-primary-border-color-disabled)
+    );
+  }
+
+  &&--success {
+    .button-type(
+      #fff,
+      #52c41a,
+      #73d13d,
+      #389e0d,
+      #fff,
+      #a6c3b9,
+      rgba(82, 196, 26, 0.06),
+      rgba(166, 195, 185, 0.1),
+      #DFE1E6
+    );
+  }
+
+  &&--warning {
+    .button-type(
+      #fff,
+      #faad14,
+      #ffc53d,
+      #ffc53d,
+      #fff,
+      #d3c6a2,
+      rgba(250, 173, 20, 0.06),
+      rgba(211, 198, 162, 0.1),
+      #DFE1E6
+    );
+  }
+
+  &&--danger {
+    .button-type(
+      var(--ti-button-danger-normal-color),
+      var(--ti-button-danger-normal-bg-color),
+      var(--ti-button-danger-bg-color-hover),
+      var(--ti-button-danger-bg-color-active),
+      var(--ti-button-danger-color-disabled),
+      var(--ti-button-danger-bg-color-disabled), 
+      rgba(24, 144, 255, 0.06),
+      rgba(191, 191, 191, 0.1),
+      var(--ti-button-danger-border-color-disabled)
+    );
+  }
+
+  &&--info {
+    .button-type(
+      #fff,
+      var(--ti-base-color-common),
+      #54657e,
+      #54657e,
+      #fff,
+      #bfbfbf,
+      rgba(51, 51, 51, 0.06),
+      rgba(191, 191, 191, 0.1),
+      #DFE1E6
+    );
+  }
+
+  &&--text {
+    .button-text(#526ECC, #344899, #344899, #ADB0B8);
+  }
+
+  &&--large {
+    .button-size(var(--ti-common-font-size-base), var(--ti-button-large-height), 80px, 130, var(--ti-button-large-padding-horizon));
+  }
+
+  &&--medium {
+    .button-size(var(--ti-common-font-size-base), var(--ti-button-middle-height), 80px, 120px, var(--ti-button-middle-padding-horizon));
+  }
+
+  &&--small {
+    .button-size(var(--ti-common-font-size-base), var(--ti-button-small-height), 60px, 120px, var(--ti-button-small-padding-horizon));
+  }
+
+  &&--mini {
+    .button-size(var(--ti-common-font-size-base), var(--ti-button-xs-height), 50px, 120px, var(--ti-button-xs-padding-horizon));
+  }
+}
+
+.@{css-prefix-iconfont}-loading {
+  font-size: 14px;
+  line-height: 1;
+  animation: rotating 2s linear infinite;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

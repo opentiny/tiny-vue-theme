@@ -1,0 +1,155 @@
+/**
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
+@import '../custom.less';
+
+@popover-prefix-cls: ~'@{css-prefix}popover';
+@popper-prefix-cls: ~'@{css-prefix}popper';
+
+.@{popover-prefix-cls}.@{popper-prefix-cls} {
+  position: absolute;
+  background: #fff;
+  color: #606266;
+  border-radius: 4px;
+  border: 1px solid #d9d9d9;
+  padding: 12px;
+  z-index: 2000;
+  line-height: 1.4;
+  text-align: justify;
+  font-size: 14px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  word-break: break-all;
+
+  .popper__arrow,
+  .popper__arrow::after {
+    border-color: transparent;
+    border-style: solid;
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;  
+  }
+
+  .popper__arrow,
+  .@{popper-prefix-cls} .popper__arrow {
+    border-width: 6px;
+    -webkit-filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.03));
+    filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.03));
+  }
+
+  .popper__arrow::after {
+    content: ' ';
+    border-width: 6px;
+  }
+
+  &[x-placement^='top'] {
+    margin-bottom: 12px;
+
+    .popper__arrow {
+      border-top-color: #d9d9d9;
+      border-bottom-width: 0;
+      bottom: -6px;
+      left: 50%;
+      margin-right: 3px;
+
+      &::after {
+        border-top-color: #fff;
+        border-bottom-width: 0;
+        bottom: 1px;
+        margin-left: -6px;   
+      }
+    }
+  }
+
+  &[x-placement^='bottom'] {
+    margin-top: 12px;
+
+    .popper__arrow {
+      top: -6px;
+      left: 50%;
+      margin-right: 3px;
+      border-top-width: 0;
+      border-bottom-color: #d9d9d9;
+
+      &::after {
+        top: 1px;
+        margin-left: -6px;
+        border-top-width: 0;
+        border-bottom-color: #fff;
+      }
+    }
+  }
+
+  &[x-placement^='right'] {
+    margin-left: 12px;
+
+    .popper__arrow {
+      top: 50%;
+      left: -6px;
+      margin-bottom: 3px;
+      border-left-width: 0;
+      border-right-color: #d9d9d9;
+    
+
+      &::after {
+        border-right-color: #fff;
+        border-left-width: 0;
+        bottom: -6px;
+        left: 1px;
+        
+      }
+    }
+  }
+
+  &[x-placement^='left'] {
+    margin-right: 12px;
+
+    .popper__arrow {
+      top: 50%;
+      right: -6px;
+      margin-bottom: 3px;
+      border-right-width: 0;
+      border-left-color: #d9d9d9;
+
+      &::after {
+        right: 1px;
+        bottom: -6px;
+        margin-left: -6px;
+        border-right-width: 0;
+        border-left-color: #fff;
+      }
+    }
+  }
+
+  .@{popover-prefix-cls}__plain {
+    padding: 18px 20px;
+  }
+
+  .@{popover-prefix-cls}__title {
+    color: #303133;
+    font-size: 16px;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  &:focus,
+  &:focus:active,
+  .@{popover-prefix-cls}__reference:focus:hover,
+  .@{popover-prefix-cls}__reference:focus:not(.focusing) {
+    outline-width: 0;
+  }
+}
+
+.@{popover-prefix-cls} {
+  &__reference {
+    display: inline-block;
+  }
+}

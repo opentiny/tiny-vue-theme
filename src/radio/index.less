@@ -1,0 +1,222 @@
+/**
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
+@import '../mixins/common.less';
+@import '../custom.less';
+
+@radio-prefix-cls: ~'@{css-prefix}radio';
+
+.@{radio-prefix-cls} {
+  color: var(--ti-radio-label-color);
+  font-weight: 500;
+  margin-right: 30px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  .user-select(none);
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.is-bordered {
+    padding: 4px 12px;
+    border-radius: 2px;
+    border: 1px solid var(--ti-radio-border-color);
+    box-sizing: border-box;
+    height: 40px;
+
+    & + & {
+      margin-left: 10px;
+    }
+
+    &.is-checked {
+      border-color: var(--ti-radio-border-color-checked);
+    }
+
+    &.is-disabled {
+      cursor: not-allowed;
+      background-color: var(--ti-radio-bg-color-disabled);
+      border-color: var(--ti-radio-border-color-disabled);
+    }
+  }
+
+  &,
+  &__input {
+    white-space: nowrap;
+    line-height: 1;
+    outline: 0;
+  }
+
+  &__input {
+    cursor: pointer;
+    display: inline-flex;
+    display: inline-block;
+
+    // 兼容ie10-ie11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      display: inline-block;
+    }
+
+    // 兼容edge
+    @supports (-ms-ime-align: auto) {
+      display: inline-block;
+    }
+
+    &.is-disabled {
+      .@{radio-prefix-cls}__inner {
+        border-color: var(--ti-radio-border-color-disabled);
+
+        & {
+          cursor: not-allowed;
+          background-color: var(--ti-radio-bg-color-disabled);
+        }
+
+        &::after {
+          cursor: not-allowed;
+          background-color: rgb(173, 176, 184);
+        }
+
+        & + .@{radio-prefix-cls}__label {
+          cursor: not-allowed;
+        }
+      }
+
+      &.is-checked .@{radio-prefix-cls}__inner {
+        background-color: var(--ti-radio-bg-color-disabled);
+        border-color: var(--ti-radio-border-color-disabled);
+      }
+
+      & + span.@{radio-prefix-cls}__label {
+        color: var(--ti-radio-label-color-disabled);
+        cursor: not-allowed;
+      }
+    }
+
+    &.is-checked {
+      .@{radio-prefix-cls}__inner {
+        border-color:  var(--ti-radio-border-color-checked);
+        background: #FFF;
+
+        &::after {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+    }
+  }
+
+  &__inner {
+    border: 1px solid var(--ti-radio-border-color);
+    border-radius: 100%;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    box-sizing: border-box;
+    outline: none;
+
+    &:hover {
+      border-color: var(--ti-radio-border-color-hover);
+    }
+
+    &:active {
+      border-color: var(--ti-radio-border-color-active);
+    }
+
+    &::after {
+      width: 8px;
+      height: 8px;
+      border-radius: 100%;
+      background-color: var( --ti-radio-bg-color-checked);
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.15s ease-in;
+    }
+  }
+
+  &__original {
+    opacity: 0;
+    outline: 0;
+    position: absolute;
+    z-index: -1;
+    margin: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__label {
+    font-size: 12px;
+    padding-left: 8px;
+    vertical-align: middle;
+  }
+
+  &--medium {
+    &.is-bordered {
+      height: 36px;
+
+      .@{radio-prefix-cls}__inner {
+        height: 14px;
+        width: 14px;
+      }
+
+      .@{radio-prefix-cls}__label {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &--small {
+    &.is-bordered {
+      height: 32px;
+
+      .@{radio-prefix-cls}__inner {
+        height: 12px;
+        width: 12px;
+      }
+
+      .@{radio-prefix-cls}__label {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &--mini {
+    &.is-bordered {
+      padding: 0 8px;
+      height: 28px;
+      line-height: 26px;
+
+      .@{radio-prefix-cls}__inner {
+        height: 12px;
+        width: 12px;
+
+        &::after {
+          width: 4px;
+          height: 4px;
+        }
+      }
+
+      .@{radio-prefix-cls}__label {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &:focus:not(.is-focus):not(:active):not(.is-disabled) &__inner {
+    box-shadow: 0 0 2px 2px var( --ti-radio-bg-color-checked);
+  }
+}

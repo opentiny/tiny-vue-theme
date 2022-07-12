@@ -1,0 +1,103 @@
+/**
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
+@import '../custom.less';
+
+@switch-prefix-cls: ~'@{css-prefix}switch';
+
+.@{switch-prefix-cls} {
+  display: inline-block;
+  width: 46px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 20px;
+  vertical-align: middle;
+  background-color: var(--ti-switch-track-off-bg-color);
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+
+  & &-inner {
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    left: 19px;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 1;
+    word-break: normal;
+    text-align: center;
+  }
+
+  &.mini {
+    width: 32px;
+  }
+
+  &.show-text {
+    width: 50px;
+  }
+
+  &&-checked.disabled {
+    cursor: not-allowed;
+    background: var(--ti-common-color-bg-light-emphasize);
+
+    &::after {
+      background: #F5F5F6;
+      cursor: not-allowed;
+    }
+
+    .@{switch-prefix-cls}-inner {
+      color: var(--ti-switch-track-off-bg-color);
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    background: var(--ti-switch-track-bg-color-disabled);
+
+    &::after {
+      background: #F5F5F6;
+      cursor: not-allowed;
+    }
+
+    .@{switch-prefix-cls}-inner {
+      color: var(--ti-switch-track-off-bg-color);
+    }
+  }
+
+  &::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    cursor: pointer;
+    transition: left 0.2s ease-in-out, width 0.2s ease-in-out;
+  }
+
+  &&-checked {
+    background-color: var(--ti-switch-track-on-bg-color);
+
+    .@{switch-prefix-cls}-inner {
+      left: 2px;
+      width: calc(~'100% - 18px');
+      overflow: hidden;
+    }
+
+    &:after {
+      left: calc(~'100% - 18px');
+    }
+  }
+}

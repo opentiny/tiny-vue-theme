@@ -1,0 +1,245 @@
+/**
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
+@import '../custom.less';
+
+@bulletin-board-prefix-cls: ~'@{css-prefix}bulletin-board';
+@tabs-prefix-cls: ~'@{css-prefix}tabs';
+@svg-prefix-cls: ~'@{css-prefix}svg';
+
+.@{bulletin-board-prefix-cls} {
+  &__item {
+    margin-bottom: 12px;
+
+    .@{bulletin-board-prefix-cls}__textTitle {
+      display: block;
+      color: #000;
+      margin-bottom: 2px;
+      font-size: 12px;
+      white-space: normal;
+      font-family: Helvetica, Arial, 'microsoft yahei';
+      line-height: initial;
+
+      &,
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .@{bulletin-board-prefix-cls}__textDate {
+      color: #999;
+      font-size: 12px;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    padding: 12px 0px 8px 24px;
+    color: var(--ti-base-color-common);
+    font-weight: 700;
+  }
+
+  &__more {
+    text-align: right;
+
+    & &-link {
+      color: var(--ti-common-color-line-active);
+      font-size: 12px;
+      line-height: normal;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+
+      .@{svg-prefix-cls} {
+        fill: var(--ti-common-color-line-active);
+        font-size: 14px;
+        margin-left: 4px;
+      }
+
+      &:hover {
+        text-decoration: none;
+
+        .@{svg-prefix-cls} {
+          fill: #40a9ff;
+        }
+      }
+    }
+  }
+
+  &__new {
+    background-color: var(--ti-input-border-color-error);
+    color: #fff;
+    border-radius: 2px;
+    min-width: 30px;
+    min-height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+    display: inline-block;
+    font-family: '宋体', cursive, Helvetica, Arial, 'microsoft yahei';
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .@{css-prefix}tabs {
+    .@{tabs-prefix-cls}--left,
+    .@{tabs-prefix-cls}--right,
+    .@{tabs-prefix-cls}__content,
+    .@{tabs-prefix-cls}__nav-scroll,
+    .@{tabs-prefix-cls}__nav-wrap {
+      overflow: hidden;
+    }
+
+    .@{tabs-prefix-cls}__header {
+      .@{tabs-prefix-cls}__nav-wrap {
+        margin-bottom: -1px;
+        position: relative;
+
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 1px;
+          background-color: #d9d9d9;
+          z-index: 1;
+        }
+
+        &.is-scrollable {
+          padding: 0 20px;
+          box-sizing: border-box;
+        }
+      }
+
+      .@{tabs-prefix-cls}__nav {
+        top: 1px;
+      }
+    }
+
+    .@{tabs-prefix-cls}__nav {
+      white-space: nowrap;
+      position: relative;
+      transition: transform 0.3s;
+      float: left;
+      z-index: 2;
+    }
+
+    .@{tabs-prefix-cls}__item {
+      line-height: 36px;
+      height: 36px;
+      padding: 0 24px;
+      box-sizing: border-box;
+      display: inline-block;
+      list-style: none;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ti-base-color-common);
+      position: relative;
+
+      &:focus,
+      &:active {
+        outline: 0;
+      }
+
+      &:hover {
+        color: var(--ti-common-color-line-active);
+        cursor: pointer;
+      }
+
+      &.is-active {
+        color: var(--ti-common-color-line-active);
+      }
+
+      &.is-disabled {
+        color: #999;
+        cursor: default;
+      }
+
+      &.is-closable {
+        // 修复自定义标签配置:with-close="true"样式错乱问题
+        > div {
+          display: inline-block;
+        }
+
+        .icon-close {
+          display: initial;
+        }
+      }
+
+      .icon-close {
+        border-radius: 50%;
+        text-align: center;
+        transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        margin-left: 5px;
+
+        &:before {
+          transform: scale(0.9);
+          display: inline-block;
+        }
+
+        &:hover {
+          background-color: #b4bccc;
+          color: #fff;
+        }
+      }
+
+      &::before {
+        bottom: -1px;
+        top: auto !important;
+        left: auto !important;
+      }
+    }
+
+    .@{tabs-prefix-cls}__content {
+      padding: 12px 24px 24px;
+    }
+
+    &.@{tabs-prefix-cls}--card {
+      .@{tabs-prefix-cls}__header {
+        .@{tabs-prefix-cls}__nav {
+          border: none;
+        }
+      }
+
+      > .@{tabs-prefix-cls}__header {
+        border-bottom: 1px solid #d9d9d9;
+
+        .@{tabs-prefix-cls}__item {
+          border-bottom: 1px solid transparent;
+          transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+            padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+          &:first-child {
+            border-left: none;
+          }
+
+          &.is-active {
+            border-bottom-color: #fff;
+
+            &.is-closable {
+              padding-left: 24px;
+              padding-right: 24px;
+            }
+
+            &:before {
+              position: absolute;
+              content: '';
+              width: 100%;
+              height: 3px;
+              background: var(--ti-common-color-line-active);
+              margin-left: -12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

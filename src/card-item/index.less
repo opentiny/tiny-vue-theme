@@ -1,0 +1,155 @@
+/**
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
+@import '../custom.less';
+
+@card-item-prefix-cls: ~'@{css-prefix}card-item';
+
+.@{card-item-prefix-cls} {
+  transition: all 200ms ease;
+  transition-property: left, top, right, transform;
+  background: #fff;
+  box-shadow: 0 0 0 transparent;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  right: auto;
+  overflow: hidden;
+  margin: 6px;
+
+  &.resizing {
+    opacity: 0.6;
+    z-index: 3;
+  }
+
+  &.dragging {
+    user-select: none;
+    transition: none;
+    z-index: 3;
+  }
+
+  &.placeholder {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px dashed rgba(0, 0, 0, 0.2);
+    transition-duration: 100ms;
+    z-index: 2;
+    user-select: none;
+
+    & .resizableIcon,
+    .remove {
+      display: none;
+    }
+  }
+
+  & > .resizableIcon {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    bottom: 2px;
+    right: 2px;
+    box-sizing: border-box;
+    cursor: se-resize;
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: 6px;
+      height: 6px;
+      bottom: 2px;
+      right: 2px;
+      border-right: 1px solid rgba(0, 0, 0, 0.5);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+      box-sizing: border-box;
+    }
+  }
+
+  & .remove {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 0;
+    right: 0;
+    padding: 0 3px 3px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    opacity: 0.5;
+    background: rgba(255, 255, 255, 0);
+    transition: all 0.5s;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.8);
+
+      &:before,
+      &:after {
+        background: rgba(0, 0, 0, 0.7);
+      }
+    }
+  }
+
+  &:hover .remove {
+    opacity: 1;
+  }
+
+  & .remove:before {
+    position: absolute;
+    top: 10px;
+    right: 6px;
+    content: '';
+    background: rgba(0, 0, 0, 0.5);
+    height: 1px;
+    width: 10px;
+    transform: rotate(45deg);
+    transition: background 0.5s;
+  }
+
+  & .remove:after {
+    position: absolute;
+    top: 10px;
+    left: 6px;
+    content: '';
+    background: rgba(0, 0, 0, 0.5);
+    height: 1px;
+    width: 10px;
+    transform: rotate(-45deg);
+    transition: background 0.5s;
+  }
+
+  .card-header {
+    font-size: 14px;
+    color: #444;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    padding: 0 30px 0 0;
+    box-sizing: border-box;
+
+    & > .card-title {
+      height: 13px;
+      line-height: 13px;
+      border-left: 3px solid #666;
+      margin: 0 0 0 12px;
+      padding: 0 0 0 5px;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+    }
+  }
+
+  .card-body {
+    height: calc(~'100% - 40px');
+    position: relative;
+
+    &:nth-child(1) {
+      height: 100%;
+    }
+  }
+}

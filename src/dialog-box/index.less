@@ -1,0 +1,305 @@
+/**
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
+@import '../custom.less';
+@import '../mixins/button.less';
+
+@dialog-box-prefix-cls: ~'@{css-prefix}dialog-box';
+@button-prefix-cls: ~'@{css-prefix}button';
+
+.@{dialog-box-prefix-cls} {
+  position: absolute;
+  background: #fff;
+  border: 1px solid transparent;
+  border-radius: var(--ti-common-border-radius-normal);
+  box-shadow: var(--ti-common-shadow-4-down);
+  overflow: hidden;
+
+  &__wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    margin: 0;
+  }
+
+  &.is-fullscreen {
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  &.is-center {
+    .@{dialog-box-prefix-cls}__header,
+    .@{dialog-box-prefix-cls}__footer {
+      text-align: center;
+    }
+  }
+
+  & &__header {
+    padding: 32px 32px 28px;
+    background: #fff;
+    font-weight: var(--ti-modal-header-font-weight);
+    line-height: 100%;
+    border-radius: var(--ti-common-border-radius-normal)
+      var(--ti-common-border-radius-normal) 0 0;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+
+    .@{dialog-box-prefix-cls}__title {
+      font-size: 18px;
+      color: var(--ti-base-color-common);
+      font-weight: bold;
+      flex: 1;
+    }
+
+    .@{dialog-box-prefix-cls}__headerbtn {
+      border: none;
+      background: none;
+      padding: 0;
+      line-height: 1;
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      cursor: pointer;
+
+      & + .@{dialog-box-prefix-cls}__headerbtn {
+        margin-left: 8px;
+      }
+
+      &:focus {
+        outline: none; //解决chrome下,focus状态下蓝边问题
+      }
+
+      .@{dialog-box-prefix-cls}__close {
+        fill: var(--ti-modal-close-icon-color);
+        font-size: 14px;
+
+        &:hover {
+          fill: var(--ti-modal-close-icon-color-hover);
+        }
+      }
+    }
+  }
+
+  & &__body {
+    text-align: left;
+    padding: 0 32px;
+    margin-bottom: 12px;
+    color: var(--ti-default-font-color);
+    font-size: var(--ti-default-font-size);
+    overflow: auto;
+    max-height: 65vh;
+
+    .@{css-prefix}upload {
+      overflow: hidden;
+    }
+
+    > span {
+      max-height: 120px;
+      overflow-y: auto;
+    }
+
+    .@{css-prefix}dept__search {
+      line-height: 30px;
+    }
+  }
+
+  &.is-fullscreen &__body {
+    max-height: calc(100vh - 94px);
+  }
+
+  & &__footer {
+    text-align: inherit;
+    padding: 28px 32px 32px;
+    text-align: center;
+    border-radius: 0 0 var(--ti-common-border-radius-normal)
+      var(--ti-common-border-radius-normal);
+    box-sizing: border-box;
+
+    .@{css-prefix}toolbar {
+      .@{css-prefix}button {
+        margin: 0 4px;
+      }
+    }
+  }
+}
+
+.@{dialog-box-prefix-cls}__scroll-lock {
+  overflow: hidden;
+}
+
+.@{button-prefix-cls} {
+  display: inline-block;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  min-width: 80px;
+  max-width: 120px;
+  height: var(--ti-button-middle-height);
+  line-height: calc(var(--ti-button-middle-height) - 2px);
+  color: var(--ti-base-color-common);
+  font-size: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  user-select: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #adb0b8;
+  border-image: initial;
+  border-radius: 2px;
+  background: #fff;
+  padding: 0 var(--ti-button-middle-padding-horizon);
+  overflow: hidden;
+  transition: border 0.3s ease 0s, color 0.3s ease 0s, background 0.3s ease 0s;
+  outline: 0;
+
+  &:focus,
+  &:hover {
+    .button-color(#5e7ce0, #5e7ce0, #fff);
+  }
+
+  &:active {
+    .button-color(#5e7ce0, #5e7ce0, #fff);
+  }
+}
+
+.@{button-prefix-cls}--primary {
+  .button-type(
+    var(--ti-button-primary-normal-color),
+     var(--ti-button-primary-normal-bg-color),
+     var(--ti-button-primary-bg-color-hover),
+     var(--ti-button-primary-bg-color-active),
+     var(--ti-button-primary-color-disabled),
+     var(--ti-button-primary-bg-color-disabled), 
+      rgba(24, 144, 255, 0.06),
+      rgba(191, 191, 191, 0.1),
+     var(--ti-button-primary-border-color-disabled)
+  );
+}
+
+.v-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  background: #000;
+}
+
+.v-modal-enter {
+  animation: v-modal-in 0.2s ease;
+}
+
+.v-modal-leave {
+  animation: v-modal-out 0.2s ease forwards;
+}
+
+@keyframes v-modal-in {
+  0% {
+    opacity: 0;
+  }
+}
+
+@keyframes v-modal-out {
+  100% {
+    opacity: 0;
+  }
+}
+
+.dialog-slideRight-enter-active {
+  animation: slideRight 0.5s ease-in forwards;
+}
+
+.dialog-slideRight-leave-active {
+  animation: slideRightout 0.5s ease-in forwards;
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: translateX(50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideRightout {
+  0% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: translateX(50%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.dialog-fade-enter-active {
+  animation: dialog-fade-in 0.3s;
+}
+
+.dialog-fade-leave-active {
+  animation: dialog-fade-out 0.3s;
+}
+
+@keyframes dialog-fade-in {
+  0% {
+    transform: translate3d(0, -20px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes dialog-fade-out {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(0, -20px, 0);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .@{dialog-box-prefix-cls} {
+    width: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+}

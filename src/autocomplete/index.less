@@ -1,0 +1,103 @@
+/**
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
+@import '../custom.less';
+
+@autocomplete-prefix-cls: ~'@{css-prefix}autocomplete';
+@icon-loading-prefix-cls: ~'@{css-prefix}icon-loading';
+@popper-prefix-cls: ~'@{css-prefix}popper';
+
+.@{autocomplete-prefix-cls} {
+  position: relative;
+  display: inline-block;
+
+  &-suggestion {
+    border-radius: 2px;
+    background-color: #fff;
+    box-sizing: border-box;
+    box-shadow: var(--ti-common-shadow-2-down);
+
+    &__wrap {
+      max-height: 280px;
+      box-sizing: border-box;
+    }
+
+    &__list {
+      margin: 0;
+      padding: 4px 0 0 0;
+    }
+
+    & &__list-item {
+      padding: var(--ti-common-space-6) 10px;
+      margin: 0;
+      line-height: var(--ti-common-line-height-number);
+      color: var(--ti-input-text-color);
+      font-size: 12px;
+      list-style: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer;
+
+      &.highlighted,
+      &:hover {
+        background-color: var(--ti-select-item-bg-color-hover);
+        color: var(--ti-select-item-text-color-hover);
+      }
+
+      &.divider {
+        margin-top: 6px;
+        border-top: 1px solid #000;
+
+        &:last-child {
+          margin-bottom: -6px;
+        }
+      }
+
+      &:only-of-type {
+        &,
+        &:hover {
+          background-color: var(--ti-select-item-bg-color-hover);
+          color: var(--ti-select-item-text-color-hover);
+        }
+      }
+    }
+
+    &.is-loading &__list-loading {
+      text-align: center;
+      height: 100px;
+      line-height: 100px;
+      font-size: 20px;
+      color: #999;
+
+      &::after {
+        display: inline-block;
+        content: '';
+        height: 100%;
+        vertical-align: middle;
+      }
+
+      &:hover {
+        background-color: #fff;
+      }
+    }
+
+    &.is-loading {
+      .@{icon-loading-prefix-cls} {
+        vertical-align: middle;
+      }
+    }
+
+    &.@{popper-prefix-cls}[x-placement^='bottom'] {
+      margin-top: 2px;
+    }
+  }
+}

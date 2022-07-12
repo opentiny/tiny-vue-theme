@@ -1,0 +1,125 @@
+/**
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
+@import '../mixins/common.less';
+@import '../custom.less';
+
+@image-viewer-prefix-cls: ~'@{css-prefix}image-viewer';
+
+.@{image-viewer-prefix-cls} {
+  &__wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__btn {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    opacity: 0.8;
+    box-sizing: border-box;
+    .user-select(none);
+
+    svg {
+      fill: #fff;
+    }
+  }
+
+  &__close {
+    top: 40px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    background-color: #606266;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__canvas {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__actions {
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    width: 282px;
+    height: 44px;
+    padding: 0 23px;
+    background-color: #606266;
+    border-radius: 22px;
+  }
+
+  &__actions-inner {
+    width: 100%;
+    height: 100%;
+    text-align: justify;
+    cursor: default;
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    svg {
+      fill: #fff;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__next,
+  &__prev {
+    top: 50%;
+    width: 44px;
+    height: 44px;
+    background-color: #606266;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__prev {
+    transform: translateY(-50%);
+    left: 40px;
+  }
+
+  &__next {
+    transform: translateY(-50%);
+    right: 40px;
+    text-indent: 2px;
+  }
+
+  &__mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    background: #000;
+  }
+}

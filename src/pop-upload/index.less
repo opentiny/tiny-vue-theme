@@ -1,0 +1,141 @@
+/**
+ * Copyright (c) 2022 - present TinyVue Authors.
+ * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+ *
+ * Use of this source code is governed by an MIT-style license.
+ *
+ * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+ * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+ *
+ */
+@import '../custom.less';
+
+@popupload-prefix-cls: ~'@{css-prefix}popupload';
+@upload-list-prefix-cls: ~'@{css-prefix}upload-list';
+@grid-modal-prefix-cls: ~'@{css-prefix}grid-modal';
+@alert-prefix-cls: ~'@{css-prefix}alert';
+
+.@{popupload-prefix-cls} {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+
+  &__dialog {
+    max-height: 512px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__dialog-header {
+    .@{alert-prefix-cls} {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__dialog-body {
+    padding-bottom: 24px;
+
+    .@{upload-list-prefix-cls} {
+      display: none;
+    }
+  }
+
+  &__dialog-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 24px;
+  }
+
+  &__dialog-tips {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__dialog-table {
+    height: 280px;
+    width: 100%;
+    margin-top: 10px;
+
+    .header-col {
+      border-right: 1px solid #d9d9d9;
+      padding: 0 12px;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    .body-col {
+      padding: 8px 12px;
+      margin: 0;
+      line-height: 20px;
+    }
+
+    .col1 {
+      width: 60%;
+    }
+
+    .col2 {
+      width: 20%;
+    }
+
+    .col3 {
+      width: 20%;
+    }
+  }
+
+  &__dialog-table-header {
+    height: 36px;
+    width: 100%;
+    color: var(--ti-base-color-common);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f1f1f1;
+    border-bottom: 1px solid #d9d9d9;
+  }
+
+  &__dialog-table-body {
+    width: 100%;
+    height: calc(100% - 36px);
+    overflow-y: auto;
+    border-bottom: 1px solid #d9d9d9;
+  }
+
+  &__dialog-table-list {
+    list-style: none;
+  }
+
+  &__dialog-table-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:nth-child(even) {
+      background: rgba(51, 51, 51, 0.06);
+    }
+
+    .delIcon {
+      height: 17px;
+      width: 17px;
+      fill: var(--ti-common-color-line-active);
+      cursor: pointer;
+
+      &:hover {
+        height: 17px;
+        width: 17px;
+        fill: var(--ti-input-border-color-error);
+      }
+    }
+  }
+
+  &__modal .@{grid-modal-prefix-cls}__body {
+    overflow-y: auto;
+  }
+}
