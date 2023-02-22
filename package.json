@@ -1,8 +1,8 @@
 {
   "name": "@opentiny/vue-theme",
-  "version": "3.4.4",
-  "description": "@opentiny/vue-theme",
-  "main": "index.css",
+  "version": "3.5.0",
+  "description": "tiny-vue-theme",
+  "main": "dist/index.css",
   "author": "tinyUI for Vue Team",
   "license": "MIT",
   "scripts": {
@@ -11,6 +11,7 @@
     "build": "npm run clean && npm run build:theme",
     "build:fast": "npm run build && npm run release",
     "release": "node build/release.js",
+    "lint": "eslint src/**/*{.vue,.js} --quiet",
     "commit": "git-cz"
   },
   "devDependencies": {
