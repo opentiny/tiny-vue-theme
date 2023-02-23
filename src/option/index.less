@@ -17,7 +17,7 @@
 @svg-prefix-cls: ~'@{css-prefix}svg';
 @select-dropdown-prefix-cls: ~'@{css-prefix}select-dropdown';
 
-.@{select-dropdown-prefix-cls}{
+.@{select-dropdown-prefix-cls} {
   .component-css-vars-option();
   &.is-multiple{
     .@{select-dropdown-item-prefix-cls} {
@@ -77,6 +77,10 @@
   &.hover .@{svg-prefix-cls},
   .checked-sur.@{svg-prefix-cls},
   .halfselect.@{svg-prefix-cls} {
+    fill: var(--ti-select-dropdown-item-icon-color-selected);
+  }
+
+  &.selected .@{svg-prefix-cls} {
     fill: var(--ti-select-dropdown-item-icon-color-selected);
   }
 
