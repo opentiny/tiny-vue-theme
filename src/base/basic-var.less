@@ -12,76 +12,70 @@
 
 /*基础变量定义*/
 :root {
-   /* 一.颜色*/
-    /* 1.基础色:此处的颜色变量为所有组件应用到的颜色，此处颜色仅在公共色中使用，具体组件不可使用*/
-  --ti-base-color-white: #fff; /* 彩色按钮或图标上文字、输入框背景色*/
+  --ti-base-color-white: #fff; /* 纯白*/
 
   /* 1.1品牌色*/
   /* 品牌主色*/
-  --ti-base-color-brand: #5e7ce0; /* 主色蓝*/
+  --ti-base-color-brand-6: #5e7ce0; /* 主色蓝*/
   /* 主色衍生色*/
-  --ti-base-color-brand-1: #344899; /* 主色悬浮色/文字按钮、链接悬浮色*/
-  --ti-base-color-brand-2: #526ecc; /* 文字按钮颜色/链接颜色*/
-  --ti-base-color-brand-3: #7693f5; /* 深色背景下图标*/
-  --ti-base-color-brand-4: #96adfa; /* 深色背景链接色*/
-  --ti-base-color-brand-5: #beccfa; /* 选块悬浮色/深色背景链接悬浮色/提示边框色/开关组件“开”禁用背景色*/
-  --ti-base-color-brand-6: #e9edfa; /* 选块默认色/滑块背景色/分页悬浮色*/
-  --ti-base-color-brand-7: #f2f5fc; /* 下拉、列表、悬浮背景/表头/下拉搜索背景*/
-  --ti-base-color-brand-8: #464C59; /* 一级tab页签背景色、tips背景色、DIV提示背景色*/
-  --ti-base-color-brand-9: #5C6173; /* 一级tab页签背景-悬浮色/页签禁用文字色*/
+  --ti-base-color-brand-8: #344899; /* 品牌色-8*/
+  --ti-base-color-brand-7: #526ecc; /* 品牌色-7*/
+  --ti-base-color-brand-5: #7693f5; /* 品牌色-5*/
+  --ti-base-color-brand-4: #96adfa; /* 品牌色-4*/
+  --ti-base-color-brand-3: #beccfa; /* 品牌色-3*/
+  --ti-base-color-brand-2: #e9edfa; /* 品牌色-2*/
+  --ti-base-color-brand-1: #f2f5fc; /* 品牌色-1*/
 
   /* 1.2中立色*/
-  /* 公用灰色系，用于文本、图标、线条色*/
-  --ti-base-color-common: #252b3a; /* 正文主色，重要信息、标题颜色、输入类文本颜色*/
-  --ti-base-color-common-1: #575d6c; /* 次要信息/图标默认*/
-  --ti-base-color-common-2: #8a8e99; /* 弱化信息、说明文字*/
-  --ti-base-color-common-3: #adb0b8; /* 边框色（如下拉、输入框）/文字禁用/导航栏文字图标/禁用图标*/
-  --ti-base-color-common-4: #dfe1e6; /* 分割线/禁用描边/tab字体/开关组件“关”禁用背景色*/
+  /* 公用灰色系，用于文本、图标、线条、背景色*/
+  --ti-base-color-common-9: #181818; /* 中立色-9*/
+  --ti-base-color-common-8: #282b33; /* 中立色-8*/
+  --ti-base-color-common-7: #252b3a; /* 中立色-7*/
+  --ti-base-color-common-6: #464c59; /* 中立色-6*/
+  --ti-base-color-common-5: #575d6c; /* 中立色-5*/
+  --ti-base-color-common-4: #5c6173; /* 中立色-4*/
+  --ti-base-color-common-3: #8a8e99; /* 中立色-3*/
+  --ti-base-color-common-2: #adb0b8; /* 中立色-2*/
+  --ti-base-color-common-1: #dfe1e6; /* 中立色-1*/
 
   /* 1.3背景色*/
-  --ti-base-color-bg: #eef0f5; /*  通用背景-页面背景色/下拉搜索框背景色/标签背景色/multiselect输入框中背景*/
-  --ti-base-color-bg-1: #f5f5f6; /* 禁用背景/小表格中禁用背景/支付列表中禁用背景*/
-  --ti-base-color-bg-2: #fafafa; /* 新区域组件-悬浮背景色*/
-  --ti-base-color-bg-3: #c7000b; /* 主要按钮-背景色*/
-  --ti-base-color-bg-4: #d64a52; /* 主要按钮-hover/Focus背景色*/
-  --ti-base-color-bg-5: #b12220; /* 主要按钮-active背景色*/
-  --ti-base-color-bg-6: #ffffff; /* 次要按钮-背景色*/
-  --ti-base-color-bg-7: #ffffff; /* 次要按钮-hover/Focus背景色*/
-  --ti-base-color-bg-8: #ffffff; /* 次要按钮-active背景色*/
-  --ti-base-color-bg-9: #282B33; /* 顶部导航背景色/顶部导航下拉悬浮背景色*/
-  --ti-base-color-bg-10: #181818; /* 顶部导航下拉背景色*/
+  --ti-base-color-bg-9: #b12220; /* 背景-9*/
+  --ti-base-color-bg-8: #c7000b; /* 背景-8*/
+  --ti-base-color-bg-7: #d64a52; /* 背景-7*/
+  --ti-base-color-bg-6: #eef0f5; /* 背景-6*/
+  --ti-base-color-bg-5: #f5f5f6; /* 背景-5*/
+  --ti-base-color-bg-4: #fafafa; /* 背景-4*/
+  --ti-base-color-bg-3: #ffffff; /* 背景-3*/
+  --ti-base-color-bg-2: #ffffff; /* 背景-2*/
+  --ti-base-color-bg-1: #ffffff; /* 背景-1*/
 
   /* 1.4功能色*/
-  --ti-base-color-error: #f66f6a; /* 错误-图标色/校验边框色/图表数据色-8*/
-  --ti-base-color-error-text: #de504e; /* 错误-文本色/交易金额*/
-  --ti-base-color-error-bg: #ffeeed; /* 错误-1*/
-  --ti-base-color-error-border: #ffbcba; /* 错误-边框色*/
-  --ti-base-color-error-icon-from:#FF41A1; /* 渐变图标-错误-起始色*/
-  --ti-base-color-error-icon-to:#FF8A5B; /* 渐变图标-错误-终止色*/
+  --ti-base-color-error-4: #de504e; /* 错误-4*/
+  --ti-base-color-error-3: #f66f6a; /* 错误-3*/
+  --ti-base-color-error-2: #ffbcba; /* 错误-2*/
+  --ti-base-color-error-1: #ffeeed; /* 错误-1*/
 
-  --ti-base-color-success: #50d4ab; /* 成功-图标色/图表数据色-1*/
-  --ti-base-color-success-text: #3ac295; /* 成功-文本色*/
-  --ti-base-color-success-bg: #edfff9; /* 成功-背景色*/
-  --ti-base-color-success-border: #acf2dc; /* 成功-边框色*/
+  --ti-base-color-success-4: #3ac295; /* 成功-4*/
+  --ti-base-color-success-3: #50d4ab; /* 成功-3*/
+  --ti-base-color-success-2: #acf2dc; /* 成功-2*/
+  --ti-base-color-success-1: #edfff9; /* 成功-1*/
 
-  --ti-base-color-warn: #fa9841; /* 告警-图标色、深色背景-运营活动文本色/图表数据色-7*/
-  --ti-base-color-warn-text: #e37d29; /* 告警-文本色*/
-  --ti-base-color-warn-bg: #fff3e8; /* 告警-背景色*/
-  --ti-base-color-warn-border: #ffd0a6; /*  告警-边框色*/
-  --ti-base-color-warn-icon-from:#FF5541; /* 渐变图标-告警-起始色*/
-  --ti-base-color-warn-icon-to:#FFD347; /* 渐变图标-告警--终止色*/
-  --ti-base-color-warn-1: #fac20a; /* 次要告警/状态图标-异常/图表数据色-6/评分组件rate-图标色*/
+  --ti-base-color-warn-5: #e37d29; /* 告警-5*/
+  --ti-base-color-warn-4: #fa9841; /* 告警-4*/
+  --ti-base-color-warn-3: #fac20a; /* 告警-3*/
+  --ti-base-color-warn-2: #ffd0a6; /*  告警-2*/
+  --ti-base-color-warn-1: #fff3e8; /* 告警-1*/
 
-  --ti-base-color-prompt: var(--ti-base-color-brand); /* 提示-图标色*/
-  --ti-base-color-prompt-text: var(--ti-base-color-brand-2); /* 提示-文本色*/
-  --ti-base-color-prompt-bg: #ebf6ff; /* 提示-背景色*/
-  --ti-base-color-prompt-border: var(--ti-base-color-brand-5); /* 提示-边框色*/
-  --ti-base-color-prompt-icon-from: #7769E8; /* 渐变图标-提示-起始色*/
-  --ti-base-color-prompt-icon-to: #58BBFF; /* 渐变图标-提示-终止色*/
+  --ti-base-color-prompt-4: var(--ti-base-color-brand-7); /* 提示-4*/
+  --ti-base-color-prompt-3: var(--ti-base-color-brand-6); /* 提示-3*/
+  --ti-base-color-prompt-2: var(--ti-base-color-brand-3); /* 提示-2*/
+  --ti-base-color-prompt-1: #ebf6ff; /* 提示-1*/
 
+  --ti-base-color-prompt-icon-from: #7769e8; /* 渐变图标-提示-起始色*/
+  --ti-base-color-prompt-icon-to: #58bbff; /* 渐变图标-提示-终止色*/
 
   /* 状态图标色*/
-  --ti-base-color-icon-info: #6cbfff; /* 状态图标-常规、信息提示/图表数据色-2*/
+  --ti-base-color-icon-info: #6cbfff; /* 状态图标-常规*/
 
   /* 图表色*/
   --ti-base-color-data-3: #a6dd82; /* 图表数据色-3*/
@@ -93,185 +87,162 @@
 
   /* 2.公共色：此处颜色为组件场景色，根据使用场景分为以下几大类，具体组件引用以下颜色，如在使用过程中有问题，请自行按类别添加*/
   /* 2.1提示类型颜色，用于alert组件、涉及功能提示的背景、文字、图标等的颜色使用*/
-  --ti-common-color-success: var(--ti-base-color-success); /* 成功-图标色/状态图标-成功*/
-  --ti-common-color-text-success: var(--ti-base-color-success-text); /* 成功-文字色*/
-  --ti-common-color-success-bg: var(--ti-base-color-success-bg); /* 成功-背景色*/
-  --ti-common-color-success-border: var(--ti-base-color-success-border); /* 成功-边框色*/
+  --ti-common-color-success: var(--ti-base-color-success-3); /* 成功-图标色/状态图标-成功*/
+  --ti-common-color-text-success: var(--ti-base-color-success-4); /* 成功-文字色*/
+  --ti-common-color-success-bg: var(--ti-base-color-success-1); /* 成功-背景色*/
+  --ti-common-color-success-border: var(--ti-base-color-success-2); /* 成功-边框色*/
 
-  --ti-common-color-error: var(--ti-base-color-error); /* 错误-图标色/状态图标-危险、错误、失败/深色Tip中的价格文本*/
-  --ti-common-color-error-text: var(--ti-base-color-error-text); /* 错误-文字色*/
-  --ti-common-color-error-bg: var(--ti-base-color-error-bg); /* 错误-背景色/校验背景色*/
-  --ti-common-color-error-border: var(--ti-base-color-error); /* 错误-校验边框色*/
-  --ti-common-color-error-border-secondary: var(--ti-base-color-error-border); /* 错误-alert边框色*/
-  --ti-common-color-error-icon-from:var(--ti-base-color-error-icon-from); /* 渐变图标-错误-起始色*/
-  --ti-common-color-error-icon-to:var(--ti-base-color-error-icon-to); /* 渐变图标-错误-终止色*/
+  --ti-common-color-error: var(--ti-base-color-error-3); /* 错误-图标色/状态图标-危险、错误、失败/深色Tip中的价格文本*/
+  --ti-common-color-error-text: var(--ti-base-color-error-4); /* 错误-文字色*/
+  --ti-common-color-error-bg: var(--ti-base-color-error-1); /* 错误-背景色/校验背景色*/
+  --ti-common-color-error-border: var(--ti-base-color-error-3); /* 错误-校验边框色*/
+  --ti-common-color-error-border-secondary: var(--ti-base-color-error-2); /* 错误-alert边框色*/
 
   --ti-common-color-info: var(--ti-base-color-info-normal); /* 信息-图标色/状态图标-信息*/
-  --ti-common-color-info-text: var(--ti-base-color-common); /* 信息-文字色*/
+  --ti-common-color-info-text: var(--ti-base-color-common-7); /* 信息-文字色*/
   --ti-common-color-info-bg: rgba(51, 51, 51, 0.06); /* 信息-背景色*/
   --ti-common-color-info-border: #d3d4d6; /* 信息-边框色*/
 
-  --ti-common-color-warn: var(--ti-base-color-warn); /* 告警-图标色/状态图标-警告*/
-  --ti-common-color-warn-text: var(--ti-base-color-warn-text); /* 告警-文字色*/
-  --ti-common-color-warn-bg: var(--ti-base-color-warn-bg); /* 告警-背景色*/
-  --ti-common-color-warn-border: var(--ti-base-color-warn-border); /* 告警-边框色*/
-  --ti-common-color-warn-secondary: var(--ti-base-color-warn-1); /* 次要告警-图标色/状态图标-异常*/
-  --ti-common-color-warn-icon-from:var(--ti-base-color-warn-icon-from); /* 渐变图标-告警-起始色*/
-  --ti-common-color-warn-icon-to:var(--ti-base-color-warn-icon-to); /* 渐变图标-告警--终止色*/
+  --ti-common-color-warn: var(--ti-base-color-warn-4); /* 告警-图标色/状态图标-警告*/
+  --ti-common-color-warn-text: var(--ti-base-color-warn-5); /* 告警-文字色*/
+  --ti-common-color-warn-bg: var(--ti-base-color-warn-1); /* 告警-背景色*/
+  --ti-common-color-warn-border: var(--ti-base-color-warn-2); /* 告警-边框色*/
+  --ti-common-color-warn-secondary: var(--ti-base-color-warn-3); /* 次要告警-图标色/状态图标-异常*/
 
-  --ti-common-color-prompt: var(--ti-base-color-prompt); /* 提示-图标色*/
-  --ti-common-color-prompt-text: var(--ti-base-color-prompt-text); /* 提示-图标色*/
-  --ti-common-color-prompt-bg: var(--ti-base-color-prompt-bg); /* 提示-背景色*/
-  --ti-common-color-prompt-border: var(--ti-base-color-prompt-border); /* 提示-边框色*/
+  --ti-common-color-prompt: var(--ti-base-color-prompt-3); /* 提示-图标色*/
+  --ti-common-color-prompt-text: var(--ti-base-color-prompt-4); /* 提示-图标色*/
+  --ti-common-color-prompt-bg: var(--ti-base-color-prompt-1); /* 提示-背景色*/
+  --ti-common-color-prompt-border: var(--ti-base-color-prompt-2); /* 提示-边框色*/
   --ti-common-color-prompt-icon-from: var(--ti-base-color-prompt-icon-from); /* 渐变图标-提示-起始色*/
   --ti-common-color-prompt-icon-to: var(--ti-base-color-prompt-icon-to); /* 渐变图标-提示-终止色*/
 
   /* 2.2文本色*/
-  --ti-common-color-text-primary: var(--ti-base-color-common); /* 一级文本色-重要信息/标题颜色/输入类文本颜色*/
-  --ti-common-color-text-secondary: var(--ti-base-color-common-1); /* 二级文本色-次要信息*/
-  --ti-common-color-text-weaken: var(--ti-base-color-common-2); /* 三级文本色-弱化信息/说明文字*/
-  --ti-common-color-text-disabled: var(--ti-base-color-common-3); /* 文本禁用信息*/
-  --ti-common-color-text-darkbg: var(--ti-base-color-common-3); /* 深色背景下文本信息*/
-  --ti-common-color-text-darkbg-disabled: var(--ti-base-color-common-1); /* 深色背景下文本信息禁用色*/
-  --ti-common-color-text-link: var(--ti-base-color-brand-2); /* 链接色*/
-  --ti-common-color-text-link-hover: var(--ti-base-color-brand-1); /* 链接悬浮色*/
+  --ti-common-color-text-primary: var(--ti-base-color-common-7); /* 一级文本色-重要信息/标题颜色/输入类文本颜色*/
+  --ti-common-color-text-secondary: var(--ti-base-color-common-5); /* 二级文本色-次要信息*/
+  --ti-common-color-text-weaken: var(--ti-base-color-common-3); /* 三级文本色-弱化信息/说明文字*/
+  --ti-common-color-text-disabled: var(--ti-base-color-common-2); /* 文本禁用信息*/
+  --ti-common-color-text-darkbg: var(--ti-base-color-common-2); /* 深色背景下文本信息*/
+  --ti-common-color-text-darkbg-disabled: var(--ti-base-color-common-5); /* 深色背景下文本信息禁用色*/
+  --ti-common-color-text-link: var(--ti-base-color-brand-7); /* 链接色*/
+  --ti-common-color-text-link-hover: var(--ti-base-color-brand-8); /* 链接悬浮色*/
   --ti-common-color-text-link-darkbg: var(--ti-base-color-brand-4); /* 深色背景链接色*/
-  --ti-common-color-text-link-darkbg-hover: var(--ti-base-color-brand-5); /* 深色背景链接悬浮色*/
-  --ti-common-color-text-link-darkbg-card-hover: var(--ti-base-color-brand-4); /* 深色背景卡片式链接悬浮色*/
-  --ti-common-color-text-highlight: var(--ti-base-color-brand-2); /* 文本高亮色*/
+  --ti-common-color-text-link-darkbg-hover: var(--ti-base-color-brand-3); /* 深色背景链接悬浮色*/
+  --ti-common-color-text-highlight: var(--ti-base-color-brand-7); /* 文本高亮色*/
   --ti-common-color-text-white: var(--ti-base-color-white); /* 深色背景或图标上文字色*/
   --ti-common-color-text-gray: var(--ti-base-color-white); /* 深色背景下的文本色，用于tip*/
-  --ti-common-color-text-gray-disabled: var(--ti-base-color-brand-9); /* 深色背景下的灰色文本禁用色，用于tab页签中*/
-  --ti-common-color-text-important: var(--ti-base-color-error-text); /* 文本_金额*/
+  --ti-common-color-text-gray-disabled: var(--ti-base-color-common-4); /* 深色背景下的灰色文本禁用色，用于tab页签中*/
+  --ti-common-color-text-important: var(--ti-base-color-error-4); /* 文本_金额*/
 
-    /* 深色背景文本色*/
-    --ti-common-color-text-primary-dark: var(--ti-base-color-white);
-    --ti-common-color-text-secondary-dark: var(--ti-base-color-common-3);
-    --ti-common-color-text-highlight-dark: var(--ti-base-color-white);
-    --ti-common-color-text-dark-active: var(--ti-base-color-common);
-    --ti-common-color-text-dark-disabled: var(--ti-base-color-brand-9);
-  
-
-
-    /* 2.3图标色*/
-    /* 浅底背景图标色*/
-  --ti-common-color-icon-normal: var(--ti-base-color-common-1);
-  --ti-common-color-icon-hover: var(--ti-base-color-brand);
-  --ti-common-color-icon-active: var(--ti-base-color-brand);
-  --ti-common-color-icon-disabled: var(--ti-base-color-common-3); /* 图标禁用色/状态图标-禁用、停止*/
+  /* 2.3图标色*/
+  /* 浅底背景图标色*/
+  --ti-common-color-icon-normal: var(--ti-base-color-common-5);
+  --ti-common-color-icon-hover: var(--ti-base-color-brand-6);
+  --ti-common-color-icon-active: var(--ti-base-color-brand-6);
+  --ti-common-color-icon-disabled: var(--ti-base-color-common-2); /* 图标禁用色/状态图标-禁用、停止*/
   --ti-common-color-icon-white: var(--ti-base-color-white);
 
   /* 灰色背景下图标色*/
-  --ti-common-color-icon-graybg-normal: var(--ti-base-color-common-3);
-  --ti-common-color-icon-graybg-hover: var(--ti-base-color-brand);
-  --ti-common-color-icon-graybg-active: var(--ti-base-color-brand);
-  --ti-common-color-icon-graybg-disabled: var(--ti-base-color-common-4);
+  --ti-common-color-icon-graybg-normal: var(--ti-base-color-common-2);
+  --ti-common-color-icon-graybg-hover: var(--ti-base-color-brand-6);
+  --ti-common-color-icon-graybg-active: var(--ti-base-color-brand-6);
+  --ti-common-color-icon-graybg-disabled: var(--ti-base-color-common-1);
 
   /* 深底背景图标色*/
-  --ti-common-color-icon-darkbg-normal: var(--ti-base-color-common-3);
-  --ti-common-color-icon-darkbg-hover: var(--ti-base-color-brand-3);
-  --ti-common-color-icon-darkbg-active: var(--ti-base-color-brand-3);
-  --ti-common-color-icon-darkbg-disabled: var(--ti-base-color-common-4);
-
-  /* 深底背景卡片式图标色*/
-  --ti-common-color-icon-dark-card-normal: var(--ti-base-color-common-3);
-  --ti-common-color-icon-dark-card-hover: var(--ti-base-color-brand-3);
-  --ti-common-color-icon-dark-card-active: var(--ti-base-color-brand-3);
-  --ti-common-color-icon-dark-card-disabled: var(--ti-base-color-common-1);
-  --ti-common-color-icon-dark-card-white: var(--ti-base-color-white);
+  --ti-common-color-icon-darkbg-normal: var(--ti-base-color-common-2);
+  --ti-common-color-icon-darkbg-hover: var(--ti-base-color-brand-5);
+  --ti-common-color-icon-darkbg-active: var(--ti-base-color-brand-5);
+  --ti-common-color-icon-darkbg-disabled: var(--ti-base-color-common-5);
 
   /* 状态图标背景色*/
   --ti-common-color-icon-info: var(--ti-base-color-icon-info); /* 状态图标-常规、信息提示*/
 
   /* 2.4线颜色，用于边框，线条等的颜色使用*/
-  --ti-common-color-line-normal: var(--ti-base-color-common-3);
-  --ti-common-color-line-hover: var(--ti-base-color-common-1);
-  --ti-common-color-line-active: var(--ti-base-color-brand);
-  --ti-common-color-line-disabled: var(--ti-base-color-common-4);
+  --ti-common-color-line-normal: var(--ti-base-color-common-2);
+  --ti-common-color-line-hover: var(--ti-base-color-common-5);
+  --ti-common-color-line-active: var(--ti-base-color-brand-6);
+  --ti-common-color-line-disabled: var(--ti-base-color-common-1);
 
   /* 分割线颜色*/
-  --ti-common-color-line-dividing: var(--ti-base-color-common-4);
-  --ti-common-color-line-dividing-dark: var(--ti-base-color-common-1);
+  --ti-common-color-line-dividing: var(--ti-base-color-common-1);
 
   /* 虚线*/
-  --ti-common-color-dash-line-normal: var(--ti-base-color-common-1);
-  --ti-common-color-dash-line-hover: var(--ti-base-color-brand-2);
+  --ti-common-color-dash-line-normal: var(--ti-base-color-common-5);
+  --ti-common-color-dash-line-hover: var(--ti-base-color-brand-7);
 
   /* 2.5背景色*/
   /* 背景基础色各状态色*/
-  --ti-common-color-bg-normal: var(--ti-base-color-bg); /* 通用背景-页面背景色/下拉搜索框背景色/标签背景色*/
-  --ti-common-color-bg-emphasize: var(--ti-base-color-brand); /* 背景高亮色*/
-  --ti-common-color-bg-disabled: var(--ti-base-color-bg-1); /* 禁用背景色*/
-  --ti-common-color-bg-hover: var(--ti-base-color-brand-1); /* 主色背景悬浮色*/
-  --ti-common-color-bg-gray: var(--ti-base-color-bg-2); /* 新区域组件-悬浮背景色*/
-  --ti-common-color-bg-secondary: var(--ti-base-color-common-3); /* 开关组件-关闭状态-背景色*/
+  --ti-common-color-bg-normal: var(--ti-base-color-bg-6); /* 通用背景-页面背景色/下拉搜索框背景色/标签背景色*/
+  --ti-common-color-bg-emphasize: var(--ti-base-color-brand-6); /* 背景高亮色*/
+  --ti-common-color-bg-disabled: var(--ti-base-color-bg-5); /* 禁用背景色*/
+  --ti-common-color-bg-hover: var(--ti-base-color-brand-8); /* 主色背景悬浮色*/
+  --ti-common-color-bg-gray: var(--ti-base-color-bg-4); /* 新区域组件-悬浮背景色*/
+  --ti-common-color-bg-secondary: var(--ti-base-color-common-2); /* 开关组件-关闭状态-背景色*/
 
   /* 重要背景色，主要用于重要按钮场景*/
-  --ti-common-bg-primary: var(--ti-base-color-bg-3); /* 重要按钮背景色*/
-  --ti-common-bg-primary-hover: var(--ti-base-color-bg-4); /* 重要按钮背景悬浮、focus色*/
-  --ti-common-bg-primary-active: var(--ti-base-color-bg-5); /* 重要按钮背景色按下色*/
+  --ti-common-bg-primary: var(--ti-base-color-bg-8); /* 重要按钮背景色*/
+  --ti-common-bg-primary-hover: var(--ti-base-color-bg-7); /* 重要按钮背景悬浮、focus色*/
+  --ti-common-bg-primary-active: var(--ti-base-color-bg-9); /* 重要按钮背景色按下色*/
 
   /* 次要背景色，主要用于次要按钮场景*/
-  --ti-common-bg-minor: var(--ti-base-color-bg-6); /* 次要按钮背景色*/
-  --ti-common-bg-minor-hover: var(--ti-base-color-bg-7); /* 次要按钮背景悬浮、focus色*/
-  --ti-common-bg-minor-active: var(--ti-base-color-bg-8); /* 次要按钮背景色按下色*/
+  --ti-common-bg-minor: var(--ti-base-color-bg-2); /* 次要按钮背景色*/
+  --ti-common-bg-minor-hover: var(--ti-base-color-bg-1); /* 次要按钮背景悬浮、focus色*/
+  --ti-common-bg-minor-active: var(--ti-base-color-bg-3); /* 次要按钮背景色按下色*/
 
   /* 白底背景状态色*/
   --ti-common-color-bg-white-normal: var(--ti-base-color-white); /* 白色背景，用于输入框背景*/
-  --ti-common-color-bg-white-emphasize: var(--ti-base-color-brand-7); /* 白色hover或强调色，如表头背景、表格悬浮、下拉选项悬浮背景*/
+  --ti-common-color-bg-white-emphasize: var(--ti-base-color-brand-1); /* 白色hover或强调色，如表头背景、表格悬浮、下拉选项悬浮背景*/
 
   /* 浅底背景状态色*/
-  --ti-common-color-bg-light-normal: var(--ti-base-color-brand-6); /* 滑块slider-背景色/多选快buttongroup-默认背景色/树组件选中背景色*/
-  --ti-common-color-bg-light-emphasize: var(--ti-base-color-brand-5); /* 浅背景hover或强调色，开关组件“开”禁用背景色*/
+  --ti-common-color-bg-light-normal: var(--ti-base-color-brand-2); /* 滑块slider-背景色/多选快buttongroup-默认背景色/树组件选中背景色*/
+  --ti-common-color-bg-light-emphasize: var(--ti-base-color-brand-3); /* 浅背景hover或强调色，开关组件“开”禁用背景色*/
 
   /* 深色底背景状态色*/
-  --ti-common-color-bg-dark-normal: var(--ti-base-color-brand-8); /* 一级tab页签背景色*/
-  --ti-common-color-bg-dark-emphasize: var(--ti-base-color-brand-9); /* 一级tab页签背景-悬浮色*/
+  --ti-common-color-bg-dark-normal: var(--ti-base-color-common-6); /* 一级tab页签背景色*/
+  --ti-common-color-bg-dark-emphasize: var(--ti-base-color-common-4); /* 一级tab页签背景-悬浮色*/
   --ti-common-color-bg-dark-active: var(--ti-common-color-bg-normal); /* 一级tab页签背景-激活/focus状态背景色*/
-  --ti-common-color-bg-dark-deep: var(--ti-base-color-brand-8); /* tip、alert提示背景色*/
-  --ti-common-color-bg-dark-disabled: var(--ti-base-color-common-4); /* 深色背景禁用色，开关组件“关”禁用背景色*/
+  --ti-common-color-bg-dark-deep: var(--ti-base-color-common-6); /* tip、alert提示背景色*/
+  --ti-common-color-bg-dark-disabled: var(--ti-base-color-common-1); /* 深色背景禁用色，开关组件“关”禁用背景色*/
 
   /* 顶部导航*/
-  --ti-common-color-bg-navigation: var(--ti-base-color-bg-9); /* 顶部导航背景色/顶部导航下拉悬浮背景色*/
-  --ti-common-color-bg-dark-select: var(--ti-base-color-bg-10); /* 顶部导航下拉背景色 */
-
-  /* 表格头部背景色*/
-  --ti-common-color-bg-table-header: var(--ti-common-color-bg-white-emphasize);
-
-  /* 深色背景步骤色*/
-  --ti-common-color-steps-dark: var(--ti-base-color-brand-3);
+  --ti-common-color-bg-navigation: var(--ti-base-color-common-8); /* 顶部导航背景色/顶部导航下拉悬浮背景色*/
+  --ti-common-color-bg-dark-select: var(--ti-base-color-common-9); /* 顶部导航下拉背景色 */
 
   /* 2.6 图表色*/
-  --ti-common-color-data-1: var(--ti-base-color-success); /* 图表数据色-1*/
+  --ti-common-color-data-1: var(--ti-base-color-success-3); /* 图表数据色-1*/
   --ti-common-color-data-2: var(--ti-base-color-icon-info); /* 图表数据色-2*/
   --ti-common-color-data-3: var(--ti-base-color-data-3); /* 图表数据色-3*/
   --ti-common-color-data-4: var(--ti-base-color-data-4); /* 图表数据色-4*/
   --ti-common-color-data-5: var(--ti-base-color-data-5); /* 图表数据色-5*/
-  --ti-common-color-data-6: var(--ti-base-color-warn-1); /* 图表数据色-6*/
-  --ti-common-color-data-7: var(--ti-base-color-warn); /* 图表数据色-7*/
-  --ti-common-color-data-8: var(--ti-base-color-error); /* 图表数据色-8*/
+  --ti-common-color-data-6: var(--ti-base-color-warn-3); /* 图表数据色-6*/
+  --ti-common-color-data-7: var(--ti-base-color-warn-4); /* 图表数据色-7*/
+  --ti-common-color-data-8: var(--ti-base-color-error-3); /* 图表数据色-8*/
+
+  /* 2.7 透明色*/
+  --ti-common-color-transparent: var(--ti-base-color-transparent);
 
   /* 二.其他变量*/
   /* 边框圆角*/
   --ti-common-border-radius-normal: 2px; /* 常规*/
+  --ti-common-border-radius-0: 0px; /* 直角*/
   --ti-common-border-radius-1: 4px; /* 圆角-1*/
   --ti-common-border-radius-2: 8px; /* 圆角-2*/
+  --ti-common-border-radius-3: 50%; /* 圆形*/
 
   /* 字号*/
-  --ti-common-font-size-base: 12px; /* 默认字号*/
-  --ti-common-font-size-1: 14px; /* 卡片标题*/
-  --ti-common-font-size-2: 16px; /* 页面标题*/
-  --ti-common-font-size-3: 18px; /* 弹窗标题、数字*/
-  --ti-common-font-size-4: 20px; /* 数字、面额*/
-  --ti-common-font-size-5: 24px; /* 数字、面额*/
-  --ti-common-font-size-6: 32px; /* 数字、面额*/
-  --ti-common-font-size-7: 36px; /* 数字、面额*/
+  --ti-common-font-size-base: 12px; /* 正文-常规*/
+  --ti-common-font-size-1: 14px; /* 标题-小*/
+  --ti-common-font-size-2: 16px; /* 标题-中*/
+  --ti-common-font-size-3: 18px; /* 标题-大*/
+  --ti-common-font-size-4: 20px; /* 字号-4*/
+  --ti-common-font-size-5: 24px; /* 字号-5*/
+  --ti-common-font-size-6: 32px; /* 字号-6*/
+  --ti-common-font-size-7: 36px; /* 字号-7*/
 
   /* 行高*/
   --ti-common-line-height-number: 1.5; /* 文字行高倍数，建议组件中设置行高使用该变量，如有特殊情况，请自行定义*/
 
   /* 间距：适用于组件中的margin、padding*/
-  --ti-common-space-base: 4px; /* 基础间距，组件中使用的主流间距都是该间距的整数倍*/
+  --ti-common-space-base: 4px; /* 基础间距*/
   --ti-common-space-2x: calc(var(--ti-common-space-base) * 2); /* 间距-2*/
   --ti-common-space-3x: calc(var(--ti-common-space-base) * 3); /* 间距-3*/
   --ti-common-space-4x: calc(var(--ti-common-space-base) * 4); /* 间距-4*/
@@ -286,22 +257,22 @@
   --ti-common-space-10: 10px; /* 其他间距-4*/
 
   /* 阴影*/
-  --ti-common-shadow-1-up: 0 -1px 4px 0 rgba(0, 0, 0, 0.1); /* 购买浮层*/
-  --ti-common-shadow-1-down: 0 1px 4px 0 rgba(0, 0, 0, 0.1); /* 页面卡片，滑块*/
-  --ti-common-shadow-1-left: -1px 0px 4px 0 rgba(0, 0, 0, 0.1); 
-  --ti-common-shadow-1-right: 1px 0px 4px 0 rgba(0, 0, 0, 0.1); /* 手风琴（leftmenu）*/
-  --ti-common-shadow-2-up: 0 -2px 8px 0 rgba(0, 0, 0, 0.2);
-  --ti-common-shadow-2-down: 0 2px 8px 0 rgba(0, 0, 0, 0.2); /* 下拉菜单、使用指南*/
-  --ti-common-shadow-2-left: -2px 0 8px 0 rgba(238, 10, 10, 0.2);
-  --ti-common-shadow-2-right: 2px 0 8px 0 rgba(252, 5, 5, 0.2);
-  --ti-common-shadow-3-up: 0 -4px 16px 0 rgba(0, 0, 0, 0.2);
-  --ti-common-shadow-3-down: 0 4px 16px 0 rgba(0, 0, 0, 0.2); /* 卡片hover、tips提示*/
-  --ti-common-shadow-3-left: -4px 0 16px 0 rgba(0, 0, 0, 0.2);
-  --ti-common-shadow-3-right: 4px 0 16px 0 rgba(0, 0, 0, 0.2);
-  --ti-common-shadow-4-up: 0 -8px 40px 0 rgba(0, 0, 0, 0.2);
-  --ti-common-shadow-4-down: 0 8px 40px 0 rgba(0, 0, 0, 0.2); /* 弹窗、气泡确认框*/
-  --ti-common-shadow-4-left: -8px 0 40px 0 rgba(0, 0, 0, 0.2); /* 右侧抽屉*/
-  --ti-common-shadow-4-right: 8px 0 40px 0 rgba(0, 0, 0, 0.2);
+  --ti-common-shadow-1-up: 0 -1px 4px 0 rgba(0, 0, 0, 0.1); /* 阴影-1 上*/
+  --ti-common-shadow-1-down: 0 1px 4px 0 rgba(0, 0, 0, 0.1); /* 阴影-1 下*/
+  --ti-common-shadow-1-left: -1px 0px 4px 0 rgba(0, 0, 0, 0.1); /* 阴影-1 左*/
+  --ti-common-shadow-1-right: 1px 0px 4px 0 rgba(0, 0, 0, 0.1); /* 阴影-1 右*/
+  --ti-common-shadow-2-up: 0 -2px 8px 0 rgba(0, 0, 0, 0.2); /* 阴影-2 上*/
+  --ti-common-shadow-2-down: 0 2px 8px 0 rgba(0, 0, 0, 0.2); /* 阴影-2 下*/
+  --ti-common-shadow-2-left: -2px 0 8px 0 rgba(238, 10, 10, 0.2); /* 阴影-2 左*/
+  --ti-common-shadow-2-right: 2px 0 8px 0 rgba(252, 5, 5, 0.2); /* 阴影-2 右*/
+  --ti-common-shadow-3-up: 0 -4px 16px 0 rgba(0, 0, 0, 0.2); /* 阴影-3 上*/
+  --ti-common-shadow-3-down: 0 4px 16px 0 rgba(0, 0, 0, 0.2); /* 阴影-3 下*/
+  --ti-common-shadow-3-left: -4px 0 16px 0 rgba(0, 0, 0, 0.2); /* 阴影-3 左*/
+  --ti-common-shadow-3-right: 4px 0 16px 0 rgba(0, 0, 0, 0.2); /* 阴影-3 右*/
+  --ti-common-shadow-4-up: 0 -8px 40px 0 rgba(0, 0, 0, 0.2); /* 阴影-4 上*/
+  --ti-common-shadow-4-down: 0 8px 40px 0 rgba(0, 0, 0, 0.2); /* 阴影-4 下*/
+  --ti-common-shadow-4-left: -8px 0 40px 0 rgba(0, 0, 0, 0.2); /* 阴影-4 左*/
+  --ti-common-shadow-4-right: 8px 0 40px 0 rgba(0, 0, 0, 0.2); /* 阴影-4 右*/
 
   /* 提示类阴影*/
   --ti-common-shadow-error: 0 1px 3px 0 rgba(199, 54, 54, 0.25); /* 错误*/
@@ -389,9 +360,9 @@
   --ti-common-size-auto: auto; /* 其他尺寸-2*/
 
   /* 2022.9.23 补充 */
-  --ti-base-color-primary-normal: var(--ti-base-color-brand);
-  --ti-base-color-primary-hover: var(--ti-base-color-brand-3);
-  --ti-base-color-primary-active: var(--ti-base-color-brand-3);
+  --ti-base-color-primary-normal: var(--ti-base-color-brand-6);
+  --ti-base-color-primary-hover: var(--ti-base-color-brand-5);
+  --ti-base-color-primary-active: var(--ti-base-color-brand-5);
   --ti-base-color-primary-disabled: #a0cfff;
   --ti-base-color-primary-disabled-border: var(--ti-common-color-line-disabled);
   --ti-base-color-primary-disabled-text: var(--ti-common-color-text-disabled);
@@ -417,18 +388,18 @@
   --ti-base-color-danger-disabled-border: var(--ti-common-color-line-disabled);
   --ti-base-color-danger-disabled-text: var(--ti-common-color-text-disabled);
 
-  --ti-base-color-info-normal: var(--ti-base-color-common);
+  --ti-base-color-info-normal: var(--ti-base-color-common-7);
   --ti-base-color-info-hover: #54657e;
   --ti-base-color-info-active: #54657e;
   --ti-base-color-info-disabled: #bfbfbf;
   --ti-base-color-info-disabled-border: var(--ti-common-color-line-disabled);
   --ti-base-color-info-disabled-text: var(--ti-common-color-text-disabled);
 
-  --ti-base-color-border: var(--ti-base-color-common-3);
-  --ti-base-color-border-hover: var(--ti-base-color-common-1);
+  --ti-base-color-border: var(--ti-base-color-common-2);
+  --ti-base-color-border-hover: var(--ti-base-color-common-5);
   --ti-base-color-light: #fff;
-  --ti-base-color-hover-background: var(--ti-base-color-brand-7);
-  --ti-base-color-selected-background: var(--ti-base-color-brand); /* 下拉框选中时的背景色 */
+  --ti-base-color-hover-background: var(--ti-base-color-brand-1);
+  --ti-base-color-selected-background: var(--ti-base-color-brand-6); /* 下拉框选中时的背景色 */
   --ti-base-color-selected-text-color: var(--ti-base-color-light); /* 下拉框选中时文字的颜色 */
   --ti-base-size-height-normal: 30px;
   --ti-base-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);

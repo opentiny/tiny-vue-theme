@@ -1,14 +1,14 @@
 /**
- * Copyright (c) 2022 - present TinyVue Authors.
- * Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
- *
- * Use of this source code is governed by an MIT-style license.
- *
- * THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
- * BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
- * A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
- *
- */
+* Copyright (c) 2022 - present TinyVue Authors.
+* Copyright (c) 2022 - present Huawei Cloud Computing Technologies Co., Ltd.
+*
+* Use of this source code is governed by an MIT-style license.
+*
+* THE OPEN SOURCE SOFTWARE IN THIS PRODUCT IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+* BUT WITHOUT ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR
+* A PARTICULAR PURPOSE. SEE THE APPLICABLE LICENSES FOR MORE DETAILS.
+*
+*/
 
 // 全量 DevUI 主题变量对应的 Tiny 主题变量
 export const DEVUI_THEME_MAP = {
@@ -17,13 +17,13 @@ export const DEVUI_THEME_MAP = {
   'devui-global-bg-normal': '#ffffff',
   'devui-base-bg': '#ffffff',
   'devui-base-bg-dark': '#333854',
-  'devui-brand': 'ti-base-color-brand',
+  'devui-brand': 'ti-base-color-brand-6',
   'devui-brand-foil': '#859bff',
   'devui-brand-hover': '#7693f5',
   'devui-brand-active': '#526ecc',
   'devui-brand-active-focus': '#344899',
   'devui-contrast': '#c7000b',
-  'devui-text': 'ti-base-color-common',
+  'devui-text': 'ti-base-color-common-7',
   'devui-text-weak': '#575d6c',
   'devui-aide-text': '#8a8e99',
   'devui-aide-text-hover': '#252b3a',
@@ -89,7 +89,7 @@ export const DEVUI_THEME_MAP = {
   'devui-float-block-shadow': 'rgba(94, 124, 224, 0.3)',
   'devui-highlight-overlay': 'rgba(255, 255, 255, 0.8)',
   'devui-range-item-hover-bg': '#e9edfa',
-  'devui-primary': 'ti-base-color-brand',
+  'devui-primary': 'ti-base-color-brand-6',
   'devui-primary-hover': '#7693f5',
   'devui-primary-active': '#344899',
   'devui-contrast-hover': '#d64a52',
