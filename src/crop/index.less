@@ -18,7 +18,9 @@
 @croppreview-prefix-cls: ~'@{css-prefix}croppreview';
 
 .@{crop-prefix-cls} {
-  .component-css-vars-crop();
+  &__wrapper {
+    .component-css-vars-crop();
+  }
 
   .cropper-container {
     direction: ltr;
