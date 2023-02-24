@@ -313,7 +313,7 @@ export const infinityTheme = {
   'ti-notify-title-font-size': 'var(--ti-common-font-size-1)',
   'ti-notify-content-font-size': 'var(--ti-common-font-size-1)',
   'ti-notify-icon-size': 'var(--ti-common-font-size-2)',
-  'ti-notify-message-margin-vertical': 0,
+  'ti-notify-message-margin-vertical': '6px',
   'ti-notify-message-margin-right': 0,
   'ti-notify-message-margin-left': 0,
   'ti-notify-border-radius': 'var(--ti-common-border-radius-1)',
