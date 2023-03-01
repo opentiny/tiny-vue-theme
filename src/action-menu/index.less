@@ -35,7 +35,7 @@
         margin: var(--ti-action-menu-item-svg-margin-top) var(--ti-action-menu-item-svg-margin-right) var(--ti-action-menu-item-svg-margin-bottom) var(--ti-action-menu-item-svg-margin-left);
       }
 
-      &:hover {
+      &:hover:not(.is-disabled) {
         color: var(--ti-action-menu-item-hover-color);
 
         &.@{action-menu-prefix-cls}__item-visable {
@@ -47,6 +47,12 @@
 
         .tiny-svg {
           fill: var(--ti-action-menu-item-hover-color);
+        }
+      }
+
+      &.is-disabled:hover{
+        .@{dropdown-item-prefix-cls} {
+          color: var(--ti-action-menu-item-disabled-text-color);
         }
       }
 
