@@ -54,11 +54,12 @@
   }
 
   &-link {
-    padding: 1px 0 1px 20px;
+    margin: 0 0 0 9px;
     cursor: pointer;
     &-title {
       display: block;
       max-width: 100%;
+      padding: 1px 8px 1px 10px;
       white-space: nowrap;
       text-overflow: ellipsis;
       color: var(--ti-anchor-text-color);
@@ -67,4 +68,8 @@
       }
     }
   }
+}
+
+.tiny-anchor-scroll-container {
+  scroll-behavior: smooth;
 }
