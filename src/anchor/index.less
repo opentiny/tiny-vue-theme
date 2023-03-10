@@ -16,10 +16,12 @@
 @anchor-prefix-cls: ~'@{css-prefix}anchor';
 
 .@{anchor-prefix-cls} {
-  &__wrapper {
+  .component-css-vars-anchor();
+  &__affix {
     .component-css-vars-anchor();
+    position: fixed;
+    z-index: 1;
   }
-
   position: relative;
   color: var(--ti-anchor-text-color);
   font-size: var(--ti-anchor-font-size);
