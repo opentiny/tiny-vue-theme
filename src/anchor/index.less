@@ -16,9 +16,10 @@
 @anchor-prefix-cls: ~'@{css-prefix}anchor';
 
 .@{anchor-prefix-cls} {
-  .component-css-vars-anchor();
-  &__affix {
+  &__wrapper {
     .component-css-vars-anchor();
+  }
+  &__affix {
     position: fixed;
     z-index: 1;
   }
