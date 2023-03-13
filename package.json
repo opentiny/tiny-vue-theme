@@ -61,6 +61,9 @@
   "resolutions": {
     "graceful-fs": "4.2.2"
   },
+  "overrides": {
+    "graceful-fs": "^4.2.10"
+  },
   "engines": {
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
