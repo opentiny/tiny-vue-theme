@@ -19,7 +19,10 @@
   &__wrapper {
     .component-css-vars-anchor();
   }
-
+  &__affix {
+    position: fixed;
+    z-index: 1;
+  }
   position: relative;
   color: var(--ti-anchor-text-color);
   font-size: var(--ti-anchor-font-size);
@@ -54,11 +57,12 @@
   }
 
   &-link {
-    padding: 1px 0 1px 20px;
+    margin: 0 0 0 9px;
     cursor: pointer;
     &-title {
       display: block;
       max-width: 100%;
+      padding: 1px 8px 1px 10px;
       white-space: nowrap;
       text-overflow: ellipsis;
       color: var(--ti-anchor-text-color);
@@ -67,4 +71,8 @@
       }
     }
   }
+}
+
+.tiny-anchor-scroll-container {
+  scroll-behavior: smooth;
 }
