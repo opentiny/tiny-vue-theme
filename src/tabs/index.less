@@ -168,6 +168,16 @@
     left: 0;
   }
 
+  &__nav:not(.is-stretch) {
+    .@{tabs-prefix-cls}__item__title {
+      display: inline-block;
+      white-space: nowrap;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
   &__nav {
     white-space: nowrap;
     position: relative;
