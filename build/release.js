@@ -15,6 +15,8 @@ fs.writeFileSync(packagesPath, result)
 
 fs.copyFileSync('package.json', path.join(source, 'package.json'))
 
+fs.copyFileSync('README.md', path.join(source, 'README.md'))
+
 execSync('npm pack', { cwd: source })
 
 fs.readdirSync(source).forEach((item) => {
