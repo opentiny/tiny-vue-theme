@@ -1,6 +1,6 @@
 {
   "name": "@opentiny/vue-theme",
-  "version": "3.5.0",
+  "version": "3.4.7",
   "description": "tiny-vue-theme",
   "main": "dist/index.css",
   "author": "tinyUI for Vue Team",
@@ -59,7 +59,10 @@
     }
   },
   "resolutions": {
-    "graceful-fs": "4.2.2"
+    "graceful-fs": "4.2.11"
+  },
+  "overrides": {
+    "graceful-fs": "4.2.11"
   },
   "engines": {
     "node": ">= 4.0.0",
