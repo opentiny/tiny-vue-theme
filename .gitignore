@@ -26,3 +26,6 @@ yarn.lock
 package-lock.json
 
 *.tgz
+
+test-results
+playwright-report
