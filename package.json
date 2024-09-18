@@ -11,6 +11,7 @@
     "codegen": "playwright codegen http://localhost:3101"
   },
   "devDependencies": {
-    "@playwright/test": "^1.42.0"
+    "@playwright/test": "^1.47.0",
+     "prettier": "^3.3.3"
   }
 }
