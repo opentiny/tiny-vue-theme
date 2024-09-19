@@ -38,7 +38,7 @@ test.describe('search组件xdesign规范', () => {
 
     // 禁用状态截图
     await page.getByRole('button', { name: '点击切换为“禁用状态”' }).click()
-    await page.waitForTimeout(100)
+    await page.waitForSelector('.tiny-search.is-disabled')
     await expect(demo).toBeInViewport()
     await expect(demo).toHaveScreenshot('disabled.png')
   })
