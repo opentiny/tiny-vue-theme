@@ -14,8 +14,8 @@ labels:
   - label: "e2e"
     sync: true
     matcher:
-      title: "^test?: ?.*"
-      commit: "^test?: ?.*"
+      title: "^test.*: ?.*"
+      commit: "^test.*: ?.*"
   - label: "refactoring"
     sync: true
     matcher:
