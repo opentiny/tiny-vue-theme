@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
 
-test.describe('tabs 组件xdesign规范', () => {
+test.describe('timeline 组件xdesign规范', () => {
   test('节点状态 --UI截图', async ({ page }) => {
     page.on('pageerror', (exception) => expect(exception).toBeNull())
     await page.goto('time-line#status')
