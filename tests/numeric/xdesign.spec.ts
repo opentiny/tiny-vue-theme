@@ -4,12 +4,13 @@ test.describe('numeric数字输入框xdesign规范', () => {
   test('基本用法--UI截图', async ({ page }) => {
     page.on('pageerror', (exception) => expect(exception).toBeNull())
     await page.goto('numeric#basic-usage')
-    const demo = page.locator('#basic-usage')
-    const num = page.locator('.tiny-numeric')
-    const increaseBtn = demo.locator('.tiny-numeric__increase')
-    await increaseBtn.click()
-    await expect(num).toBeInViewport()
-    await expect(num).toHaveScreenshot('basic-usage.png')
+    const demo = page.locator('#basic-usage .pc-demo')
+    await expect(demo).toBeInViewport()
+    await expect(demo).toHaveScreenshot('basic-usage.png')
+
+    await demo.locator('.tiny-numeric__increase').hover()
+    await expect(demo).toBeInViewport()
+    await expect(demo).toHaveScreenshot('hover.png')
   })
   test('禁用--UI截图', async ({ page }) => {
     page.on('pageerror', (exception) => expect(exception).toBeNull())
