@@ -4,7 +4,7 @@ test.describe('anchor 组件xdesign规范', () => {
   test('默认--UI截图', async ({ page }) => {
     page.on('pageerror', (exception) => expect(exception).toBeNull())
     await page.goto('anchor#basic-usage')
-    const demo = page.locator('#basic-usage .pc-demo')
+    const demo = page.locator('#basic-usage .pc-demo .tiny-anchor')
     await expect(demo).toBeInViewport()
     await expect(demo).toHaveScreenshot('basic-usage.png')
 
