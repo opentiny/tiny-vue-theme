@@ -17,6 +17,14 @@ test.describe('steps 组件xdesign规范', () => {
     await expect(demo).toHaveScreenshot('line-dot.png')
   })
 
+  test('条形和高级向导型--UI截图', async ({ page }) => {
+    page.on('pageerror', (exception) => expect(exception).toBeNull())
+    await page.goto('steps#advanced-steps')
+    const demo = page.locator('#advanced-steps .pc-demo-container')
+    await expect(demo).toBeInViewport()
+    await expect(demo).toHaveScreenshot('advanced.png')
+  })
+
   test('尺寸--UI截图', async ({ page }) => {
     page.on('pageerror', (exception) => expect(exception).toBeNull())
     await page.goto('steps#size')
