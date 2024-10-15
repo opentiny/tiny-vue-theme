@@ -52,6 +52,24 @@ test.describe('tabs 组件xdesign规范', () => {
     await expect(demo).toHaveScreenshot('tabs-separator-hover.png')
   })
 
+  test('各个位置--UI截图', async ({ page }) => {
+    page.on('pageerror', (exception) => expect(exception).toBeNull())
+    await page.goto('tabs#position')
+    const demo = page.locator('#position .pc-demo .tiny-tabs')
+    await expect(demo).toBeInViewport()
+    await expect(demo).toHaveScreenshot('left.png')
+
+    // bottom截图
+    await page.locator('label').filter({ hasText: 'bottom 显示' }).click()
+    await expect(demo).toBeInViewport()
+    await expect(demo).toHaveScreenshot('bottom.png')
+
+    // right截图
+    await page.locator('label').filter({ hasText: 'right 显示' }).click()
+    await expect(demo).toBeInViewport()
+    await expect(demo).toHaveScreenshot('right.png')
+  })
+
   test('多层级 --UI截图', async ({ page }) => {
     page.on('pageerror', (exception) => expect(exception).toBeNull())
     await page.goto('tabs#tabs-second-layer')
