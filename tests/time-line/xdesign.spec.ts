@@ -12,7 +12,7 @@ test.describe('timeline 组件xdesign规范', () => {
   test('圆点外观 --UI截图', async ({ page }) => {
     page.on('pageerror', (exception) => expect(exception).toBeNull())
     await page.goto('time-line#shape')
-    const demo = page.locator('#shape .pc-demo')
+    const demo = page.locator('#shape .pc-demo .tiny-timeline')
     await expect(demo).toBeInViewport()
     await expect(demo).toHaveScreenshot('shape.png')
   })
